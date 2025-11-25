@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/add_federated_learning_menu.sql" value="82403a7a-8ce1-46c8-940d-9d3e640cb62a" />
+    <file url="file://$PROJECT_DIR$/add_model_distillation_menu.sql" value="82403a7a-8ce1-46c8-940d-9d3e640cb62a" />
+  </component>
+</project>
