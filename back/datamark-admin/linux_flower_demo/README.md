@@ -43,6 +43,7 @@ Install the dependencies defined in `pyproject.toml` as well as the `pytorchexam
 
 ```bash
 pip install -e .
+pip install ultralytics
 ```
 
 ## Run the project
