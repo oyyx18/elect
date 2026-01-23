@@ -2,6 +2,7 @@ package com.qczy.federated.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.qczy.federated.model.entity.FederatedNodeEntity;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -84,4 +85,12 @@ public interface FederatedNodeMapper extends BaseMapper<FederatedNodeEntity> {
     @Update("UPDATE fl_federated_node SET metadata = #{metadata}, updated_at = NOW() " +
             "WHERE node_id = #{nodeId}")
     int updateMetadata(@Param("nodeId") String nodeId, @Param("metadata") String metadata);
+
+    /**
+     * 根据节点ID删除节点
+     * @param nodeId 节点ID
+     * @return 删除行数
+     */
+    @Delete("DELETE FROM fl_federated_node WHERE node_id = #{nodeId}")
+    int deleteByNodeId(@Param("nodeId") String nodeId);
 }

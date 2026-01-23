@@ -31,6 +31,14 @@ export function sendFederatedHeartbeat(nodeId: string, metadata?: Record<string,
   });
 }
 
+/** 删除节点 */
+export function deleteFederatedNode(nodeId: string) {
+  return request<any>({
+    url: `/federated/nodes/${nodeId}`,
+    method: 'delete'
+  });
+}
+
 /** 获取任务列表 */
 export function fetchFederatedJobs() {
   return request<any>({
@@ -74,4 +82,10 @@ export function stopFederatedJob(jobId: string) {
   });
 }
 
-
+/** 删除任务 */
+export function deleteFederatedJob(jobId: string) {
+  return request<any>({
+    url: `/federated/jobs/${jobId}`,
+    method: 'delete'
+  });
+}

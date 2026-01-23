@@ -1,7 +1,7 @@
-#   ---------------- 开发环境 ----------------
+#   ---------------- 寮?鍙戠幆澧?----------------
 
 server:
-  #服务端口
+  #鏈嶅姟绔彛
   port: 9091
 
 spring:
@@ -12,7 +12,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 
-  #遇到同样名字的时候覆盖注册
+  #閬囧埌鍚屾牱鍚嶅瓧鐨勬椂鍊欒鐩栨敞鍐?
   main:
     allow-bean-definition-overriding: true
 
@@ -25,69 +25,72 @@ spring:
     static-locations: file:H://qczy
 
 mybatis-plus:
-  #  mapper-locations: classpath:/qczy/**/*.xml #指定mapper.xml路径
+  #  mapper-locations: classpath:/qczy/**/*.xml #鎸囧畾mapper.xml璺緞
   mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: com.qczy.model.entity.*
   global-config:
     db-config:
-      id-type: auto #全局默认主键类型设置为自增
+      id-type: auto #鍏ㄥ眬榛樿涓婚敭绫诲瀷璁剧疆涓鸿嚜澧?
   configuration:
-    auto-mapping-behavior: partial #只对非嵌套的 resultMap 进行自动映射
-    map-underscore-to-camel-case: true #开启自动驼峰命名规则映射
+    auto-mapping-behavior: partial #鍙闈炲祵濂楃殑 resultMap 杩涜鑷姩鏄犲皠
+    map-underscore-to-camel-case: true #寮?鍚嚜鍔ㄩ┘宄板懡鍚嶈鍒欐槧灏?
     # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 
-# 自定义jwt key
+# 鑷畾涔塲wt key
 jwt:
-  tokenHeader: Authorization #JWT存储的请求头
-  secret: mySecret #JWT加解密使用的密钥
-  expiration: 604800 #JWT的超期限时间(60*60*24)
-  tokenHead: Bearer  #JWT负载中拿到开头cd
+  tokenHeader: Authorization #JWT瀛樺偍鐨勮姹傚ご
+  secret: mySecret #JWT鍔犺В瀵嗕娇鐢ㄧ殑瀵嗛挜
+  expiration: 604800 #JWT鐨勮秴鏈熼檺鏃堕棿(60*60*24)
+  tokenHead: Bearer  #JWT璐熻浇涓嬁鍒板紑澶碿d
 
 upload:
-  port: http:10.5.28.224:8080/temp/file/  #用于返回给前端访问临时文件的访问路径
+  port: http:10.5.28.224:8080/temp/file/  #鐢ㄤ簬杩斿洖缁欏墠绔闂复鏃舵枃浠剁殑璁块棶璺緞
   address: http:10.5.28.224:9091/
-  tempPath: /usr/local/qczyDataMark/temp/  #临时文件夹存储位置
+  tempPath: /usr/local/qczyDataMark/temp/  #涓存椂鏂囦欢澶瑰瓨鍌ㄤ綅缃?
 
 # ============================================================================
-# 联邦学习配置
+# 鑱旈偊瀛︿範閰嶇疆
 # ============================================================================
 flower:
   server:
-    port: 8080                                    # Flower Server 默认端口（会自动递增避免冲突）
+    remote:
+      base-url: http://10.129.45.44:9000
+      resnet-app-dir: linux_flower_demo
+    port: 8080                                    # Flower Server 榛樿绔彛锛堜細鑷姩閫掑閬垮厤鍐茬獊锛?
     script:
-      path: flower_server.py                      # Flower Server Python 脚本路径
+      path: flower_server.py                      # Flower Server Python 鑴氭湰璺緞
   python:
-    executable: python3                           # Python 可执行文件路径
+    executable: python3                           # Python 鍙墽琛屾枃浠惰矾寰?
   models:
     save:
-      path: /usr/local/qczyDataMark/fl_models/    # 模型保存路径
+      path: /usr/local/qczyDataMark/fl_models/    # 妯″瀷淇濆瓨璺緞
 
 federated:
   node:
     heartbeat:
-      timeout: 30                                 # 节点心跳超时时间（秒）
+      timeout: 30                                 # 鑺傜偣蹇冭烦瓒呮椂鏃堕棿锛堢锛?
   training:
     default:
-      num-rounds: 10                              # 默认训练轮数
-      min-clients: 2                              # 默认最少客户端数
-      allowed-drop-percent: 5.0                   # 允许精度下降百分比
+      num-rounds: 10                              # 榛樿璁粌杞暟
+      min-clients: 2                              # 榛樿鏈?灏戝鎴风鏁?
+      allowed-drop-percent: 5.0                   # 鍏佽绮惧害涓嬮檷鐧惧垎姣?
   strategy:
     fedavg:
-      enabled: true                               # 启用 FedAvg 策略
+      enabled: true                               # 鍚敤 FedAvg 绛栫暐
     fedprox:
-      enabled: true                               # 启用 FedProx 策略
-      proximal-mu: 0.01                           # FedProx 近端项系数
-  formalPath: /usr/local/qczyDataMark/formal/ # 正式文件夹存储位置
+      enabled: true                               # 鍚敤 FedProx 绛栫暐
+      proximal-mu: 0.01                           # FedProx 杩戠椤圭郴鏁?
+  formalPath: /usr/local/qczyDataMark/formal/ # 姝ｅ紡鏂囦欢澶瑰瓨鍌ㄤ綅缃?
   zipPath: /usr/local/gczyDataMark/tempZip/
-  modelDescPath: /usr/local/qczyDataMark/file/modelDesc/ #模型评估 - 模型API接口说明存放位置
-  modelCasePath: /usr/local/qczyDataMark/file/modelCase/ #模型案例 - 模型API接口说明存放位置
-  pdfPath: /usr/local/qczyDataMark/file/file/pdf/ #pdf申请单 - pdf申请单存放位置
+  modelDescPath: /usr/local/qczyDataMark/file/modelDesc/ #妯″瀷璇勪及 - 妯″瀷API鎺ュ彛璇存槑瀛樻斁浣嶇疆
+  modelCasePath: /usr/local/qczyDataMark/file/modelCase/ #妯″瀷妗堜緥 - 妯″瀷API鎺ュ彛璇存槑瀛樻斁浣嶇疆
+  pdfPath: /usr/local/qczyDataMark/file/file/pdf/ #pdf鐢宠鍗?- pdf鐢宠鍗曞瓨鏀句綅缃?
 
 file:
-  accessAddress: http://10.5.28.224:9091/formal/  #正式文件访问地址
-  accessAddress1: http://10.5.28.224:9091/formal/  #正式文件访问地址
-  versionFormat: /v  #版本格式
+  accessAddress: http://10.5.28.224:9091/formal/  #姝ｅ紡鏂囦欢璁块棶鍦板潃
+  accessAddress1: http://10.5.28.224:9091/formal/  #姝ｅ紡鏂囦欢璁块棶鍦板潃
+  versionFormat: /v  #鐗堟湰鏍煎紡
 monitor:
   server: http://10.5.28.8:8080/monitor/server
 
@@ -96,3 +99,4 @@ flask:
   algorithmPicHttp1: http://10.5.28.8/data
   prefixToRemove: /home/lyl-casia/ghf/data2
   prefixToRemove1: /data
+

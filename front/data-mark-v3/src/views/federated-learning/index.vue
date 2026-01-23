@@ -38,6 +38,16 @@
                 </n-gi>
               </n-grid>
 
+              <!-- 节点操作 -->
+              <n-space justify="end">
+                <n-button type="primary" @click="openNodeModal">
+                  <template #icon>
+                    <n-icon :component="AddOutline" />
+                  </template>
+                  添加节点
+                </n-button>
+              </n-space>
+
               <!-- 节点列表 -->
               <n-data-table
                 :columns="nodeColumns"
@@ -45,6 +55,7 @@
                 :loading="nodesLoading"
                 :bordered="false"
                 :single-line="false"
+                :scroll-x="1200"
               />
             </n-space>
           </div>
@@ -231,6 +242,56 @@
         </n-space>
       </template>
     </n-modal>
+
+    <!-- 添加节点对话框 -->
+    <n-modal
+      v-model:show="showNodeModal"
+      preset="card"
+      title="添加节点"
+      style="width: 520px"
+      :bordered="false"
+      :segmented="{ content: true }"
+    >
+      <n-form
+        ref="nodeFormRef"
+        :model="nodeForm"
+        :rules="nodeFormRules"
+        label-placement="left"
+        label-width="100px"
+      >
+        <n-form-item label="节点ID" path="nodeId">
+          <n-input v-model:value="nodeForm.nodeId" placeholder="例如：node-1" />
+        </n-form-item>
+        <n-form-item label="主机地址" path="host">
+          <n-input v-model:value="nodeForm.host" placeholder="例如：127.0.0.1" />
+        </n-form-item>
+        <n-form-item label="端口" path="port">
+          <n-input-number
+            v-model:value="nodeForm.port"
+            :min="1"
+            :max="65535"
+            style="width: 100%"
+          />
+        </n-form-item>
+        <n-form-item label="元数据(JSON)" path="metadata">
+          <n-input
+            v-model:value="nodeForm.metadata"
+            type="textarea"
+            placeholder='{"gpu":"A100"}'
+            :autosize="{ minRows: 3, maxRows: 5 }"
+          />
+        </n-form-item>
+      </n-form>
+
+      <template #footer>
+        <n-space justify="end">
+          <n-button @click="showNodeModal = false">取消</n-button>
+          <n-button type="primary" @click="handleCreateNode" :loading="addingNode">
+            添加
+          </n-button>
+        </n-space>
+      </template>
+    </n-modal>
   </div>
 </template>
 
@@ -246,15 +307,19 @@ import {
   RefreshOutline,
   PlayOutline,
   StopOutline,
-  EyeOutline
+  EyeOutline,
+  TrashOutline
 } from '@vicons/ionicons5';
 import {
   fetchFederatedNodes,
   fetchFederatedJobs,
+  registerFederatedNode,
+  deleteFederatedNode,
   createFederatedJob,
   startFederatedJob,
-  stopFederatedJob
-} from '@/service/api';
+  stopFederatedJob,
+  deleteFederatedJob
+} from '@/service/api/federated';
 import * as echarts from 'echarts';
 
 // ==================== 响应式数据 ====================
@@ -266,12 +331,22 @@ const nodes = ref<any[]>([]);
 const jobs = ref<any[]>([]);
 const nodesLoading = ref(false);
 const jobsLoading = ref(false);
+const showNodeModal = ref(false);
+const addingNode = ref(false);
 const showCreateJobModal = ref(false);
 const creating = ref(false);
 const selectedJob = ref<any>(null);
 const chartRef = ref<HTMLElement | null>(null);
+const nodeFormRef = ref<any | null>(null);
 
 // ==================== 表单数据 ====================
+const nodeForm = ref({
+  nodeId: '',
+  host: '',
+  port: 8080,
+  metadata: ''
+});
+
 const jobForm = ref({
   modelType: 'RESNET',
   numRounds: 10,
@@ -344,7 +419,32 @@ const nodeColumns = [
     key: 'lastHeartbeatAt',
     width: 180,
     render: (row: any) => (row.lastHeartbeatAt ? new Date(row.lastHeartbeatAt).toLocaleString() : '-')
-  }
+  },
+  {
+  title: '操作',
+  key: 'actions',
+  width: 160,
+  render: (row: any) =>
+    h(
+      NSpace,
+      { justify: 'center' },
+      {
+        default: () => [
+          h(
+            NButton,
+            {
+              size: 'small',
+              type: 'error',
+              text: true,
+              onClick: () => confirmDeleteNode(row.nodeId)
+            },
+            { default: () => '删除' }
+          )
+        ]
+      }
+    )
+}
+
 ];
 
 const jobColumns = [
@@ -418,12 +518,66 @@ const jobColumns = [
                 onClick: () => viewJobDetails(row)
               },
               { default: () => '查看', icon: () => h(NIcon, { component: EyeOutline }) }
+            ),
+            h(
+              NButton,
+              {
+                size: 'small',
+                type: 'error',
+                disabled: row.status === 'RUNNING',
+                onClick: () => confirmDeleteJob(row.jobId)
+              },
+              { default: () => '删除', icon: () => h(NIcon, { component: TrashOutline }) }
             )
           ]
         }
       )
   }
 ];
+
+const nodeFormRules = {
+  nodeId: { required: true, message: '请输入节点ID', trigger: 'blur' },
+  host: { required: true, message: '请输入节点地址', trigger: 'blur' },
+  port: { required: true, type: 'number', message: '请输入端口号', trigger: 'blur' }
+};
+
+function confirmDeleteNode(nodeId: string) {
+  dialog.warning({
+    title: '确认删除',
+    content: `确定要删除节点 ${nodeId} 吗？`,
+    positiveText: '删除',
+    negativeText: '取消',
+    onPositiveClick: async () => {
+      try {
+        await deleteFederatedNode(nodeId);
+        message.success('删除节点成功');
+        await refreshNodes();
+      } catch (error) {
+        message.error('删除节点失败');
+        console.error(error);
+      }
+    }
+  });
+}
+
+function confirmDeleteJob(jobId: string) {
+  dialog.warning({
+    title: '确认删除',
+    content: `确定要删除训练任务 ${jobId} 吗？`,
+    positiveText: '删除',
+    negativeText: '取消',
+    onPositiveClick: async () => {
+      try {
+        await deleteFederatedJob(jobId);
+        message.success('删除训练任务成功');
+        await refreshJobs();
+      } catch (error) {
+        message.error('删除训练任务失败');
+        console.error(error);
+      }
+    }
+  });
+}
 
 // ==================== 工具函数 ====================
 function getStatusType(status: string): 'success' | 'warning' | 'error' | 'info' | 'default' {
@@ -454,7 +608,8 @@ async function refreshNodes() {
   nodesLoading.value = true;
   try {
     const res = await fetchFederatedNodes();
-    nodes.value = res.data || [];
+    // 接口使用统一的 { code, data, msg } 结构，这里与其它页面保持一�?
+    nodes.value = (res?.data || []) as any[];
   } catch (error) {
     message.error('获取节点列表失败');
     console.error(error);
@@ -463,11 +618,59 @@ async function refreshNodes() {
   }
 }
 
+function openNodeModal() {
+  nodeForm.value.nodeId = '';
+  nodeForm.value.host = '';
+  nodeForm.value.port = 8080;
+  nodeForm.value.metadata = '';
+  showNodeModal.value = true;
+}
+
+async function handleCreateNode() {
+  addingNode.value = true;
+  try {
+    if (nodeFormRef.value && typeof nodeFormRef.value.validate === 'function') {
+      await nodeFormRef.value.validate();
+    }
+
+    let metadata: Record<string, any> | undefined;
+    if (nodeForm.value.metadata) {
+      try {
+        metadata = JSON.parse(nodeForm.value.metadata);
+      } catch {
+        message.error('元数据需为合法 JSON');
+        return;
+      }
+    }
+
+    await registerFederatedNode({
+      nodeId: nodeForm.value.nodeId,
+      host: nodeForm.value.host,
+      port: Number(nodeForm.value.port),
+      metadata
+    });
+
+    message.success('节点添加成功');
+    showNodeModal.value = false;
+    nodeForm.value.nodeId = '';
+    nodeForm.value.host = '';
+    nodeForm.value.port = 8080;
+    nodeForm.value.metadata = '';
+    await refreshNodes();
+  } catch (error) {
+    message.error('添加节点失败');
+    console.error(error);
+  } finally {
+    addingNode.value = false;
+  }
+}
+
 async function refreshJobs() {
   jobsLoading.value = true;
   try {
     const res = await fetchFederatedJobs();
-    jobs.value = res.data || [];
+    // 与节点列表保持一致，兼容标准响应结�?
+    jobs.value = (res?.data || []) as any[];
   } catch (error) {
     message.error('获取任务列表失败');
     console.error(error);

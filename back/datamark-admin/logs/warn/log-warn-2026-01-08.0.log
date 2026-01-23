@@ -1,0 +1,18 @@
+2026-01-08 12:56:37.949 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2026-01-08 12:56:43.260 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2026-01-08 12:57:30.924 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2026-01-08 12:57:40.552 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.qczy.model.entity.OperLogEntity".
+2026-01-08 12:57:45.718 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.qczy.model.entity.AlgorithmTaskResultEntity".
+2026-01-08 12:57:47.447 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.qczy.model.entity.RoleMenuEntity".
+2026-01-08 12:57:47.500 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.qczy.model.entity.RoleButtonEntity".
+2026-01-08 12:57:51.754 [taskScheduler-1] WARN  c.q.federated.service.FederatedCoordinatorService - Node 11 marked as inactive due to heartbeat timeout
+2026-01-08 12:57:56.795 [taskScheduler-2] WARN  c.q.federated.service.FederatedCoordinatorService - Node 11 marked as inactive due to heartbeat timeout
+2026-01-08 12:58:01.812 [taskScheduler-1] WARN  c.q.federated.service.FederatedCoordinatorService - Node 11 marked as inactive due to heartbeat timeout
+2026-01-08 12:58:06.828 [taskScheduler-3] WARN  c.q.federated.service.FederatedCoordinatorService - Node 11 marked as inactive due to heartbeat timeout
+2026-01-08 12:58:11.846 [taskScheduler-5] WARN  c.q.federated.service.FederatedCoordinatorService - Node 11 marked as inactive due to heartbeat timeout
+2026-01-08 12:58:16.864 [taskScheduler-1] WARN  c.q.federated.service.FederatedCoordinatorService - Node 11 marked as inactive due to heartbeat timeout
+2026-01-08 12:58:21.877 [taskScheduler-2] WARN  c.q.federated.service.FederatedCoordinatorService - Node 11 marked as inactive due to heartbeat timeout
+2026-01-08 12:58:26.897 [taskScheduler-7] WARN  c.q.federated.service.FederatedCoordinatorService - Node 11 marked as inactive due to heartbeat timeout
+2026-01-08 12:58:31.925 [taskScheduler-7] WARN  c.q.federated.service.FederatedCoordinatorService - Node 11 marked as inactive due to heartbeat timeout
+2026-01-08 12:58:36.942 [taskScheduler-7] WARN  c.q.federated.service.FederatedCoordinatorService - Node 11 marked as inactive due to heartbeat timeout
+2026-01-08 12:58:41.961 [taskScheduler-7] WARN  c.q.federated.service.FederatedCoordinatorService - Node 11 marked as inactive due to heartbeat timeout

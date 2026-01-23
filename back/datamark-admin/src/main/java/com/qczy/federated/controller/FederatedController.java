@@ -74,11 +74,31 @@ public class FederatedController {
         return Result.ok(list);
     }
 
+    @DeleteMapping("/nodes/{nodeId}")
+    @ApiOperation("删除节点")
+    public Result deleteNode(@PathVariable String nodeId) {
+        boolean success = coordinatorService.deleteNode(nodeId);
+        if (success) {
+            return Result.ok(true);
+        }
+        return Result.fail("节点不存在或删除失败");
+    }
+
     @GetMapping("/jobs")
     @ApiOperation("任务列表")
     public Result jobs() {
         Collection<TrainingJob> list = coordinatorService.listJobs();
         return Result.ok(list);
+    }
+
+    @DeleteMapping("/jobs/{jobId}")
+    @ApiOperation("删除训练任务")
+    public Result deleteJob(@PathVariable String jobId) {
+        boolean success = coordinatorService.deleteJob(jobId);
+        if (success) {
+            return Result.ok(true);
+        }
+        return Result.fail("任务不存在或删除失败");
     }
 }
 

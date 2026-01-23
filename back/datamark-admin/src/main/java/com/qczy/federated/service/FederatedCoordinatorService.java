@@ -67,6 +67,9 @@ public class FederatedCoordinatorService {
     @Value("${flower.server.port:8080}")
     private int defaultFlowerPort;
 
+    @Value("${flower.server.remote.resnet-app-dir:linux_flower_demo}")
+    private String resnetAppDir;
+
     @Value("${federated.node.heartbeat.timeout:30}")
     private int heartbeatTimeout;
 
@@ -283,14 +286,20 @@ public class FederatedCoordinatorService {
         int port = defaultFlowerPort + jobCache.size();
 
         // 启动 Flower Server
+        String appDir = null;
+        if (job.getModelType() == ModelType.RESNET) {
+            appDir = resnetAppDir;
+        }
+
         boolean started = flowerServerManager.startServer(
-                jobId,
-                job.getModelType().name(),
-                numRounds,
-                minClients,
-                port,
-                job.getBaselineAccuracy(),
-                job.getAllowedDropPercent()
+            jobId,
+            job.getModelType().name(),
+            numRounds,
+            minClients,
+            port,
+            job.getBaselineAccuracy(),
+            job.getAllowedDropPercent(),
+            appDir
         );
 
         // 更新任务状态
@@ -449,6 +458,64 @@ public class FederatedCoordinatorService {
      */
     public FederatedNode getNode(String nodeId) {
         return nodeCache.get(nodeId);
+    }
+
+    /**
+     * 删除节点（缓存 + 数据库）
+     * @param nodeId 节点ID
+     * @return 是否删除成功
+     */
+    @Transactional
+    public boolean deleteNode(String nodeId) {
+        FederatedNode removed = nodeCache.remove(nodeId);
+        try {
+            int rows = nodeMapper.deleteByNodeId(nodeId);
+            if (rows == 0 && removed == null) {
+                logger.warn("Delete node failed, node not found: {}", nodeId);
+                return false;
+            }
+            logger.info("Deleted federated node: {}", nodeId);
+            return true;
+        } catch (Exception e) {
+            logger.error("Failed to delete node from database: {}", e.getMessage());
+            // 回滚缓存变更
+            if (removed != null) {
+                nodeCache.put(nodeId, removed);
+            }
+            return false;
+        }
+    }
+
+    /**
+     * åˆ é™¤è®­ç»ƒä»»åŠ¡ï¼ˆç¼“å­˜ + æ•°æ®åº“ï¼‰
+     * @param jobId ä»»åŠ¡ID
+     * @return æ˜¯å¦åˆ é™¤æˆåŠŸ
+     */
+    @Transactional
+    public boolean deleteJob(String jobId) {
+        TrainingJob existing = jobCache.get(jobId);
+        if (existing != null) {
+            if ("RUNNING".equals(existing.getStatus()) || flowerServerManager.isServerRunning(jobId)) {
+                flowerServerManager.stopServer(jobId);
+            }
+        }
+
+        TrainingJob removed = jobCache.remove(jobId);
+        try {
+            int rows = jobMapper.deleteByJobId(jobId);
+            if (rows == 0 && removed == null) {
+                logger.warn("Delete job failed, job not found: {}", jobId);
+                return false;
+            }
+            logger.info("Deleted training job: {}", jobId);
+            return true;
+        } catch (Exception e) {
+            logger.error("Failed to delete job from database: {}", e.getMessage());
+            if (removed != null) {
+                jobCache.put(jobId, removed);
+            }
+            return false;
+        }
     }
 
     // ========== 实体转换方法 ==========

@@ -377,7 +377,7 @@
                     </n-descriptions-item>
                     <n-descriptions-item label="任务状态">
                       <n-tag :type="getStatusType(selectedTask.status)">
-                        {{ selectedTask.status }}
+                        {{ getStatusLabel(selectedTask.status) }}
                       </n-tag>
                     </n-descriptions-item>
                     <n-descriptions-item label="当前轮次">
@@ -914,6 +914,7 @@ let lossChart: echarts.ECharts | null = null;
 let accuracyChart: echarts.ECharts | null = null;
 let gpuChart: echarts.ECharts | null = null;
 let memoryChart: echarts.ECharts | null = null;
+let lossChartTimer: number | null = null;
 
 // ==================== 已训练模型相关数据 ====================
 
@@ -930,12 +931,35 @@ const trainedModelsPagination = {
   pageSize: 10
 };
 
+// ????????
+function getErrorMessage(error: any) {
+  return error?.message || error?.msg || '';
+}
+
+// TODO: replace with real inference APIs
+async function getAllInferenceTasks() {
+  return { code: 0, data: [] as any[] };
+}
+
+// TODO: replace with real inference APIs
+async function deleteInferenceTask(inferenceId: string) {
+  return { code: 0, data: { inferenceId } };
+}
+
+// ???????? - ????
+const showInferenceDialog = ref(false);
+const selectedTaskForInference = ref<any>(null);
+
+// ????????
+const inferenceTasksData = ref([]);
+const inferenceTasksLoading = ref(false);
+
 // ==================== 选项数据 ====================
 
 // 教师模型选项
 const teacherModelOptions = [
-  { label: 'LLaMA-2-7B', value: 'llama2-7b', paramSize: '7B' },
-  { label: 'LLaMA-2-13B', value: 'llama2-13b', paramSize: '13B' },
+  { label: 'Qwenvl-3B', value: 'qwen-vl-3b', paramSize: '3B' },
+  { label: 'Qwenvl-7B', value: 'qwen-vl-7b', paramSize: '7B' },
   { label: 'LLaMA-2-70B', value: 'llama2-70b', paramSize: '70B' },
   { label: 'Qwen-7B', value: 'qwen-7b', paramSize: '7B' },
   { label: 'Qwen-14B', value: 'qwen-14b', paramSize: '14B' },
@@ -945,14 +969,14 @@ const teacherModelOptions = [
   { label: 'InternLM-7B', value: 'internlm-7b', paramSize: '7B' }
 ];
 
-// 学生模型选项
 const studentModelOptions = [
-  { label: 'TinyLLaMA-1.1B', value: 'tinyllama-1.1b', paramSize: '1.1B' },
-  { label: 'MiniGPT-350M', value: 'minigpt-350m', paramSize: '350M' },
-  { label: 'DistilBERT-110M', value: 'distilbert-110m', paramSize: '110M' },
-  { label: 'BERT-Base-110M', value: 'bert-base-110m', paramSize: '110M' },
-  { label: 'GPT-2-Small-117M', value: 'gpt2-small-117m', paramSize: '117M' },
-  { label: 'T5-Small-60M', value: 't5-small-60m', paramSize: '60M' },
+  { label: 'YOLOv8-Nano', value: 'yolov8-nano', paramSize: '~3M' },
+  { label: 'YOLOv8-Small', value: 'yolov8-small', paramSize: '~11M' },
+  { label: 'LSTM-TextClassifier', value: 'lstm-text', paramSize: '~5M' },
+  { label: 'UNet-Light', value: 'unet-light', paramSize: '~8M' },
+  { label: 'ResNet-18', value: 'resnet-18', paramSize: '~11M' },
+  { label: 'Vision Transformer (ViT-Tiny)', value: 'vit-tiny', paramSize: '~6M' },
+  { label: 'DistilBERT', value: 'distilbert', paramSize: '~66M' },
   { label: 'Custom Model', value: 'custom', paramSize: 'Custom' }
 ];
 
@@ -1216,7 +1240,7 @@ const taskColumns = [
       return h(
         NTag,
         { type: getStatusType(row.status) },
-        { default: () => row.status }
+        { default: () => getStatusLabel(row.status) }
       );
     }
   },
@@ -1373,9 +1397,19 @@ const loraPresetColumns = [
 
 // ==================== 方法 ====================
 
+const statusLabelMap: Record<string, string> = {
+  NOT_STARTED: '未开始',
+  RUNNING: '运行中',
+  PENDING: '等待中',
+  COMPLETED: '已完成',
+  FAILED: '失败',
+  PAUSED: '已暂停'
+};
+
 // 获取状态类型
 function getStatusType(status: string) {
   const statusMap: Record<string, any> = {
+    NOT_STARTED: 'default',
     RUNNING: 'success',
     PENDING: 'warning',
     COMPLETED: 'info',
@@ -1383,6 +1417,10 @@ function getStatusType(status: string) {
     PAUSED: 'default'
   };
   return statusMap[status] || 'default';
+}
+
+function getStatusLabel(status: string) {
+  return statusLabelMap[status] || status;
 }
 
 // 教师模型变更
@@ -1455,35 +1493,32 @@ function refreshTasks() {
   // TODO: 调用后端API获取任务列表
   setTimeout(() => {
     // 模拟数据
-    // 示例数据：包含已完成和运行中的任务（用于演示）
+    // 示例数据：包含未开始的任务（用于演示）
 
     tasks.value = [
-
-      // 已完成的任务（用于"已训练模型"标签页展示）
 
       {
 
         taskId: 'TASK_001',
 
-        taskName: '目标检测协同训练-YOLOv5',
+        taskName: ' QwenVL-resnet50',
 
-        teacherModel: 'llama2-7b',
+        teacherModel: 'qwen-vl-3b',
 
-        studentModel: 'yolov5s',
-
+        studentModel: 'resnet50',
         loraRank: 16,
 
-        status: 'COMPLETED',
+        status: 'NOT_STARTED',
 
-        progress: 100,
+        progress: 0,
 
-        currentEpoch: 50,
+        currentEpoch: 0,
 
         totalEpochs: 50,
 
-        accuracy: 92.5,
+        accuracy: null,
 
-        createTime: '2025-11-23 10:30:00'
+        createTime: '2026-01-14 10:30:00'
 
       },
 
@@ -1491,106 +1526,107 @@ function refreshTasks() {
 
         taskId: 'TASK_002',
 
-        taskName: '图像分类协同训练-ResNet',
+        taskName: 'QwenVL-ResNet',
 
-        teacherModel: 'qwen-7b',
+        teacherModel: 'Qwenvl-7b',
 
         studentModel: 'resnet50',
 
         loraRank: 8,
 
-        status: 'COMPLETED',
+        status: 'NOT_STARTED',
 
-        progress: 100,
+        progress: 0,
 
-        currentEpoch: 40,
+        currentEpoch: 0,
 
         totalEpochs: 40,
 
-        accuracy: 88.3,
+        accuracy: null,
 
-        createTime: '2025-11-20 14:15:00'
+        createTime: '2026-01-14 14:15:00'
 
       },
 
       {
 
-        taskId: 'TASK_003',
+        taskId: 'TASK_101',
 
-        taskName: '语义分割协同训练-UNet',
+        taskName: 'Qwenvl-3B-YOLO',
 
-        teacherModel: 'llama2-13b',
+        teacherModel: 'qwen-vl-3b',
+
+        studentModel: 'yolo',
+
+        loraRank: 12,
+
+        status: 'COMPLETED',
+
+        progress: 100,
+
+        currentEpoch: 30,
+
+        totalEpochs: 30,
+
+        accuracy: 90.4,
+
+        createTime: '2026-01-12 09:20:00'
+
+      },
+
+      {
+
+        taskId: 'TASK_102',
+
+        taskName: 'Qwenvl-7B-ResNet',
+
+        teacherModel: 'qwen-vl-7b',
+
+        studentModel: 'resnet',
+
+        loraRank: 16,
+
+        status: 'COMPLETED',
+
+        progress: 100,
+
+        currentEpoch: 24,
+
+        totalEpochs: 24,
+
+        accuracy: 88.9,
+
+        createTime: '2026-01-10 16:45:00'
+
+      },
+
+      {
+
+        taskId: 'TASK_103',
+
+        taskName: 'Qwenvl-3B-UNet',
+
+        teacherModel: 'qwen-vl-3b',
 
         studentModel: 'unet',
 
-        loraRank: 16,
+        loraRank: 20,
 
         status: 'COMPLETED',
 
         progress: 100,
 
-        currentEpoch: 60,
+        currentEpoch: 36,
 
-        totalEpochs: 60,
+        totalEpochs: 36,
 
-        accuracy: 85.7,
+        accuracy: 92.1,
 
-        createTime: '2025-11-18 09:00:00'
-
-      },
-
-      {
-
-        taskId: 'TASK_005',
-
-        taskName: '视觉Transformer协同训练',
-
-        teacherModel: 'llama2-7b',
-
-        studentModel: 'vit',
-
-        loraRank: 16,
-
-        status: 'COMPLETED',
-
-        progress: 100,
-
-        currentEpoch: 45,
-
-        totalEpochs: 45,
-
-        accuracy: 90.2,
-
-        createTime: '2025-11-15 16:45:00'
+        createTime: '2026-01-08 11:05:00'
 
       },
 
-      // 正在运行的任务
-
-      {
-
-        taskId: 'task-001',
-
-        taskName: 'LLaMA2-7B 蒸馏训练',
-
-        teacherModel: 'llama2-7b',
-
-        studentModel: 'tinyllama',
-
-        loraRank: 16,
-
-        status: 'RUNNING',
-
-        progress: 45,
-
-        currentEpoch: 4,
-
-        totalEpochs: 10,
-
-        accuracy: 82.5,
-
-        createTime: '2025-11-25 10:30:00'
-      }
+      
     ];
     
     tasksLoading.value = false;
@@ -1611,6 +1647,14 @@ function handleCreateTask() {
 
 // 启动任务
 function handleStartTask(task: any) {
+  if (task.status === 'RUNNING') return;
+  task.status = 'RUNNING';
+  if (task.currentEpoch === 0) {
+    task.currentEpoch = 1;
+  }
+  if (task.progress === 0 && task.totalEpochs > 0) {
+    task.progress = Math.round((task.currentEpoch / task.totalEpochs) * 100);
+  }
   message.info(`启动任务: ${task.taskName}`);
   // TODO: 调用后端API
 }
@@ -1636,8 +1680,13 @@ function handleDeleteTask(task: any) {
     positiveText: '删除',
     negativeText: '取消',
     onPositiveClick: () => {
+      const nextTasks = tasks.value.filter(item => item.taskId !== task.taskId);
+      tasks.value = nextTasks;
+      if (selectedTask.value?.taskId === task.taskId) {
+        selectedTask.value = null;
+        activeTab.value = 'training-tasks';
+      }
       message.success('任务已删除');
-      refreshTasks();
     }
   });
 }
@@ -1777,6 +1826,39 @@ function initLossChart() {
   };
 
   lossChart.setOption(option);
+
+  if (lossChartTimer) {
+    clearInterval(lossChartTimer);
+    lossChartTimer = null;
+  }
+
+  const totalData = option.series[0].data as number[];
+  const hardData = option.series[1].data as number[];
+  const softData = option.series[2].data as number[];
+
+  const clamp = (value: number, min: number, max: number) =>
+    Math.min(max, Math.max(min, value));
+
+  lossChartTimer = window.setInterval(() => {
+    const nextTotal = clamp((totalData[totalData.length - 1] as number) + (Math.random() - 0.5) * 0.25, 0.4, 4);
+    const nextHard = clamp((hardData[hardData.length - 1] as number) + (Math.random() - 0.5) * 0.2, 0.2, 3);
+    const nextSoft = clamp((softData[softData.length - 1] as number) + (Math.random() - 0.5) * 0.18, 0.1, 2.5);
+
+    totalData.shift();
+    totalData.push(nextTotal);
+    hardData.shift();
+    hardData.push(nextHard);
+    softData.shift();
+    softData.push(nextSoft);
+
+    lossChart?.setOption({
+      series: [
+        { data: totalData },
+        { data: hardData },
+        { data: softData }
+      ]
+    });
+  }, 800);
 }
 
 // 初始化准确率图表
@@ -1992,17 +2074,79 @@ function handleViewTrainedModelDetail(row: any) {
 }
 
 // 使用模型进行标注
+// ???????? - ????
 function handleUseModelForAnnotation(row: any) {
-  const router = useRouter();
-  router.push({
-    path: '/data-ano/autoano',
-    query: {
-      distillationModelId: row.taskId,
-      distillationModelName: row.taskName
+  // ???????
+  selectedTaskForInference.value = row;
+  showInferenceDialog.value = true;
+}
+
+function handleInferenceSuccess(inferenceId: string) {
+  message.success(`??????????ID: ${inferenceId}`);
+  // ?????????Tab
+  activeTab.value = 'inference-tasks';
+  // ????????
+  refreshInferenceTasks();
+}
+
+// ????????
+async function refreshInferenceTasks() {
+  inferenceTasksLoading.value = true;
+  try {
+    const res = await getAllInferenceTasks();
+    console.log('??????????:', res);
+
+    // ?????????
+    if (res.code === 200 || res.code === 0 || (res.data !== undefined && !res.error)) {
+      inferenceTasksData.value = res.data || [];
+      console.log('??????:', inferenceTasksData.value);
+    } else {
+      message.error(res.message || getErrorMessage(res.error) || '??????????');
+    }
+  } catch (error: any) {
+    console.error('??????????:', error);
+    message.error('???????????' + (error?.message || '????'));
+  } finally {
+    inferenceTasksLoading.value = false;
+  }
+}
+
+// ??????
+function handleViewInferenceResult(row: any) {
+  if (row.status === 'COMPLETED') {
+    message.info(`????: ${row.outputDir}
+????: ${row.processedImages} ?
+??: ${row.successCount} ??: ${row.failureCount}`);
+  } else if (row.status === 'FAILED') {
+    message.error(`????: ${row.errorMessage || '????'}`);
+  } else {
+    message.info('???????...');
+  }
+}
+
+// ??????
+async function handleDeleteInference(row: any) {
+  dialog.warning({
+    title: '????',
+    content: `????????? ${row.inferenceId} ??`,
+    positiveText: '??',
+    negativeText: '??',
+    onPositiveClick: async () => {
+      try {
+        const res = await deleteInferenceTask(row.inferenceId);
+        if (res.code === 200 || res.code === 0) {
+          message.success('????');
+          refreshInferenceTasks();
+        } else {
+          message.error(res.message || '????');
+        }
+      } catch (error: any) {
+        message.error('?????' + (error?.message || '????'));
+      }
     }
   });
-  message.success(`已选择模型 ${row.taskName}，正在跳转到自动标注页面...`);
 }
+
 
 // ==================== 生命周期 ====================
 
@@ -2021,6 +2165,10 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
+  if (lossChartTimer) {
+    clearInterval(lossChartTimer);
+    lossChartTimer = null;
+  }
   if (lossChart) lossChart.dispose();
   if (accuracyChart) accuracyChart.dispose();
   if (gpuChart) gpuChart.dispose();
@@ -2057,3 +2205,6 @@ onUnmounted(() => {
   margin-right: 8px;
 }
 </style>
+
+// ????????
+

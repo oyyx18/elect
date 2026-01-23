@@ -147,4 +147,12 @@ public interface TrainingJobMapper extends BaseMapper<TrainingJobEntity> {
     @Update("UPDATE fl_training_job SET global_model_path = #{modelPath}, updated_at = NOW() " +
             "WHERE job_id = #{jobId}")
     int updateModelPath(@Param("jobId") String jobId, @Param("modelPath") String modelPath);
+
+    /**
+     * æ ¹æ®ä»»åŠ¡IDåˆ é™¤ä»»åŠ¡
+     * @param jobId ä»»åŠ¡ID
+     * @return åˆ é™¤è¡Œæ•°
+     */
+    @Delete("DELETE FROM fl_training_job WHERE job_id = #{jobId}")
+    int deleteByJobId(@Param("jobId") String jobId);
 }
