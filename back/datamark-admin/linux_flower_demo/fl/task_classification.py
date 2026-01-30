@@ -18,6 +18,7 @@ pytorch_transforms = Compose(
 )
 
 local_cifar10_dataset: Dataset | None = None
+METRIC_NAME = "accuracy"
 
 
 class Net(nn.Module):

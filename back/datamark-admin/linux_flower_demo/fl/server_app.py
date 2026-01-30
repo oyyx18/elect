@@ -57,6 +57,11 @@ def global_evaluate(server_round: int, arrays: ArrayRecord) -> MetricRecord:
     test_dataloader = TASK_MODULE.load_centralized_dataset()
     test_loss, test_metrics = TASK_MODULE.test(model, test_dataloader, device)
 
-    metrics = dict(test_metrics)
-    metrics["loss"] = test_loss
+    if isinstance(test_metrics, (dict, MetricRecord)):
+        metrics = dict(test_metrics)
+    else:
+        metric_name = getattr(TASK_MODULE, "METRIC_NAME", "metric")
+        metrics = {metric_name: float(test_metrics)}
+
+    metrics["loss"] = float(test_loss)
     return MetricRecord(metrics)
