@@ -256,3 +256,76 @@ def _get_dataset_root(dataset) -> Path:
     if isinstance(dataset, Subset):
         return _get_dataset_root(dataset.dataset)
     return DEFAULT_DATASET_ROOT
+
+
+
+def train(net: torch.nn.Module, trainloader: DataLoader, epochs: int, lr: float, device: torch.device):
+    """Train a YOLO model using Ultralytics."""
+
+    if not isinstance(net, YoloWrapper):
+        raise TypeError("Detection training expects a YoloWrapper model.")
+
+    dataset_root = _get_dataset_root(trainloader.dataset)
+    data_yaml = _ensure_yolo_dataset_yaml(Path(dataset_root))
+
+    results = net.yolo.train(
+        data=str(data_yaml),
+        epochs=epochs,
+        lr0=lr,
+        device=str(device),
+    )
+
+    loss = 0.0
+    if hasattr(results, "results_dict"):
+        loss = float(results.results_dict.get("train/box_loss", 0.0))
+    return loss
+
+
+def test(net: torch.nn.Module, testloader: DataLoader, device: torch.device):
+    """Evaluate a YOLO model using Ultralytics and return (loss, mAP50)."""
+
+    if not isinstance(net, YoloWrapper):
+        raise TypeError("Detection evaluation expects a YoloWrapper model.")
+
+    dataset_root = _get_dataset_root(testloader.dataset)
+    data_yaml = _ensure_yolo_dataset_yaml(Path(dataset_root))
+
+    results = net.yolo.val(data=str(data_yaml), device=str(device))
+
+    loss = 0.0
+    map50 = 0.0
+    if hasattr(results, "results_dict"):
+        loss = float(results.results_dict.get("val/box_loss", 0.0))
+        map50 = float(results.results_dict.get("metrics/mAP50", 0.0))
+    return loss, map50
+
+
+def _ensure_yolo_dataset_yaml(dataset_root: Path) -> Path:
+    """Create a minimal YOLO dataset YAML alongside the dataset if missing."""
+
+    yaml_path = dataset_root / "dataset.yaml"
+    if yaml_path.exists():
+        return yaml_path
+
+    train_path = (dataset_root / "images" / "train").resolve()
+    val_path = (dataset_root / "images" / "val").resolve()
+
+    yaml_content = "\n".join(
+        [
+            f"path: {dataset_root.resolve()}",
+            f"train: {train_path}",
+            f"val: {val_path}",
+            "names: []",
+            "",
+        ]
+    )
+    yaml_path.write_text(yaml_content, encoding="utf-8")
+    return yaml_path
+
+
+def _get_dataset_root(dataset) -> Path:
+    if hasattr(dataset, "dataset_root"):
+        return Path(dataset.dataset_root)
+    if isinstance(dataset, Subset):
+        return _get_dataset_root(dataset.dataset)
+    return DEFAULT_DATASET_ROOT

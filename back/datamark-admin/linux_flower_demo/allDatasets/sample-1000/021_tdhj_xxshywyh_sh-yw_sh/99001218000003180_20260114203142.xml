@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<annotation>
+  <folder>unknown</folder>
+  <filename>99001218000003180_20260114203142.jpg</filename>
+  <size>
+    <width>640</width>
+    <height>480</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>021_tdhj_xxshywyh_sh/yw_sh</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>1796</xmin>
+      <ymin>1605</ymin>
+      <xmax>1849</xmax>
+      <ymax>1644</ymax>
+    </bndbox>
+  </object>
+</annotation>

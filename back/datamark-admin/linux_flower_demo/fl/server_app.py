@@ -55,6 +55,8 @@ def global_evaluate(server_round: int, arrays: ArrayRecord) -> MetricRecord:
     model.to(device)
 
     test_dataloader = TASK_MODULE.load_centralized_dataset()
-    test_loss, test_acc = TASK_MODULE.test(model, test_dataloader, device)
+    test_loss, test_metrics = TASK_MODULE.test(model, test_dataloader, device)
 
-    return MetricRecord({"accuracy": test_acc, "loss": test_loss})
+    metrics = dict(test_metrics)
+    metrics["loss"] = test_loss
+    return MetricRecord(metrics)

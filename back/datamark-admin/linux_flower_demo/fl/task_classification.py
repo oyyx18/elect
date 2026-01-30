@@ -163,7 +163,7 @@ def load_centralized_dataset() -> DataLoader:
 
 
 def train(net: nn.Module, trainloader: DataLoader, epochs: int, lr: float, device: torch.device):
-    """Train the model locally and return average training loss."""
+    """Train the model locally and return (loss, metrics)."""
 
     net.to(device)
     criterion = torch.nn.CrossEntropyLoss().to(device)
@@ -184,11 +184,11 @@ def train(net: nn.Module, trainloader: DataLoader, epochs: int, lr: float, devic
             running_loss += loss.item()
 
     avg_trainloss = running_loss / len(trainloader)
-    return avg_trainloss
+    return avg_trainloss, {}
 
 
 def test(net: nn.Module, testloader: DataLoader, device: torch.device):
-    """Evaluate the model and return (loss, accuracy)."""
+    """Evaluate the model and return (loss, metrics)."""
 
     net.to(device)
     criterion = torch.nn.CrossEntropyLoss()
@@ -206,7 +206,7 @@ def test(net: nn.Module, testloader: DataLoader, device: torch.device):
 
     accuracy = correct / len(testloader.dataset)
     loss = loss / len(testloader)
-    return loss, accuracy
+    return loss, {"accuracy": accuracy}
 
 
 def check_local_dataset() -> None:

@@ -1,0 +1,7 @@
+path: allDatasets/dian
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 6
+names: ['电缆破损', '绝缘子破损', '正常电缆', '正常绝缘子', '杆塔', '植被遮挡']

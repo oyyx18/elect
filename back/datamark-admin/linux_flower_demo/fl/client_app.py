@@ -27,7 +27,7 @@ def train(msg: Message, context: Context):
     batch_size = context.run_config["batch-size"]
     trainloader, _ = task.load_data(partition_id, num_partitions, batch_size)
 
-    train_loss = task.train(
+    train_loss, train_metrics = task.train(
         model,
         trainloader,
         context.run_config["local-epochs"],
@@ -36,10 +36,9 @@ def train(msg: Message, context: Context):
     )
 
     model_record = ArrayRecord(model.state_dict())
-    metrics = {
-        "train_loss": train_loss,
-        "num-examples": len(trainloader.dataset),
-    }
+    metrics = dict(train_metrics)
+    metrics["train_loss"] = train_loss
+    metrics["num-examples"] = len(trainloader.dataset)
     metric_record = MetricRecord(metrics)
     content = RecordDict({"arrays": model_record, "metrics": metric_record})
     return Message(content=content, reply_to=msg)
@@ -61,17 +60,15 @@ def evaluate(msg: Message, context: Context):
     batch_size = context.run_config["batch-size"]
     _, valloader = task.load_data(partition_id, num_partitions, batch_size)
 
-    eval_loss, eval_acc = task.test(
+    eval_loss, eval_metrics = task.test(
         model,
         valloader,
         device,
     )
 
-    metrics = {
-        "eval_loss": eval_loss,
-        "eval_acc": eval_acc,
-        "num-examples": len(valloader.dataset),
-    }
+    metrics = dict(eval_metrics)
+    metrics["eval_loss"] = eval_loss
+    metrics["num-examples"] = len(valloader.dataset)
     metric_record = MetricRecord(metrics)
     content = RecordDict({"metrics": metric_record})
     return Message(content=content, reply_to=msg)
