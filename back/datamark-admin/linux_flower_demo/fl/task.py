@@ -9,12 +9,10 @@ from types import ModuleType
 DEFAULT_TASK_TYPE = os.getenv("FLOWER_TASK_TYPE", "classification")
 
 _TASK_ALIASES = {
-    "classification": "fl.task_classification",
-    "image-classification": "fl.task_classification",
-    "cls": "fl.task_classification",
-    "detection": "fl.task_detection",
-    "object-detection": "fl.task_detection",
-    "yolo": "fl.task_detection",
+    "classification": "fl.classification.task_classification",
+    "detection": "fl.detection.yolov8",
+    "object-detection": "fl.detection.yolov8",
+    "yolo": "fl.detection.yolov8",
 }
 
 

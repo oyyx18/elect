@@ -1,0 +1,1141 @@
+2026-01-19 19:53:50.985 [main] INFO  com.qczy.MyApplication - Starting MyApplication on DESKTOP-MVT8OQB with PID 2504 (D:\PROJECT\ELEC_1126\back\datamark-admin\target\classes started by Administrator in D:\PROJECT\ELEC_1126\back\datamark-admin)
+2026-01-19 19:53:50.989 [main] INFO  com.qczy.MyApplication - The following profiles are active: test
+2026-01-19 19:54:00.707 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfig' of type [com.qczy.config.AsyncConfig$$EnhancerBySpringCGLIB$$5d2a511f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 19:54:00.951 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 19:54:01.569 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 19:54:01.586 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 19:54:01.598 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@55d58825' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 19:54:01.602 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 19:54:01.636 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 19:54:03.209 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2026-01-19 19:54:03.229 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-01-19 19:54:03.233 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-19 19:54:03.234 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2026-01-19 19:54:03.424 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-19 19:54:03.425 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 12311 ms
+2026-01-19 19:54:14.701 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-19 19:54:15.388 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-19 19:54:15.962 [main] INFO  c.q.federated.service.FederatedCoordinatorService - Loaded 2 nodes from database
+2026-01-19 19:54:16.291 [main] INFO  c.q.federated.service.FederatedCoordinatorService - Loaded 10 jobs from database
+2026-01-19 19:54:17.791 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2026-01-19 19:54:17.806 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'asyncExecutor'
+2026-01-19 19:54:18.043 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2026-01-19 19:54:18.096 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2026-01-19 19:54:19.374 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2026-01-19 19:54:20.007 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@120411ec, org.springframework.security.web.context.SecurityContextPersistenceFilter@586737ff, org.springframework.security.web.header.HeaderWriterFilter@16ccd2bc, org.springframework.web.filter.CorsFilter@6cc8adff, org.springframework.security.web.authentication.logout.LogoutFilter@5c1c9881, com.qczy.filter.JwtAuthenticationTokenFilter@34414ffc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@194224ca, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c2096c6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b2e9db2, org.springframework.security.web.session.SessionManagementFilter@5368e981, org.springframework.security.web.access.ExceptionTranslationFilter@61e14b53, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@52f43225]
+2026-01-19 19:54:20.692 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2026-01-19 19:54:20.782 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2026-01-19 19:54:20.794 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Skipping initializing disabled plugin bean swagger v2.0
+2026-01-19 19:54:20.827 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-01-19 19:54:20.895 [taskScheduler-3] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:54:21.036 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2026-01-19 19:54:21.092 [main] INFO  com.qczy.MyApplication - Started MyApplication in 31.223 seconds (JVM running for 31.803)
+2026-01-19 19:54:26.070 [taskScheduler-3] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:54:31.088 [taskScheduler-2] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:54:36.107 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:54:41.130 [taskScheduler-5] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:54:46.157 [taskScheduler-2] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:54:51.174 [taskScheduler-3] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:54:56.196 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:55:01.204 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:55:02.523 [http-nio-8081-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-19 19:55:02.523 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-19 19:55:02.559 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 35 ms
+2026-01-19 19:55:02.895 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:03.020 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:03.075 [http-nio-8081-exec-1] INFO  com.qczy.controller.user.UserController - token->Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE3Njg0NTQ5NDk4NDEsImV4cCI6MTc2OTA1OTc0OX0.vx4auqsOlTy7E-E1Ye8IiYiNM-02DjEHPZjGUhpMBwWzmGiCo7SvHCGKVFGvcQ2ncdiikGOQr3XdCwBeddcq-A
+2026-01-19 19:55:03.224 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:03.244 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:03.246 [http-nio-8081-exec-6] INFO  com.qczy.controller.user.UserController - token->Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE3Njg0NTQ5NDk4NDEsImV4cCI6MTc2OTA1OTc0OX0.vx4auqsOlTy7E-E1Ye8IiYiNM-02DjEHPZjGUhpMBwWzmGiCo7SvHCGKVFGvcQ2ncdiikGOQr3XdCwBeddcq-A
+2026-01-19 19:55:03.263 [http-nio-8081-exec-6] INFO  com.qczy.controller.user.UserController - username->admin
+2026-01-19 19:55:04.512 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:04.526 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:04.532 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:04.543 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:04.580 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:04.595 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:04.625 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:04.638 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:04.671 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:04.686 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:04.733 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:04.743 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:06.216 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:55:09.482 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:09.485 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:09.514 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:09.520 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:10.485 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:10.491 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:10.501 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:10.505 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:11.236 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:55:11.842 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:11.842 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:11.863 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:11.864 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:16.255 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:55:16.835 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:16.841 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:21.263 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:55:21.835 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:21.840 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:21.843 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:21.849 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:26.278 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:55:26.847 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:26.851 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:31.296 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:55:31.831 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:31.833 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:31.836 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:31.838 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:36.306 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:55:36.834 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:36.839 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:41.318 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:55:41.830 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:41.832 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:41.833 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:41.837 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:46.330 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:55:46.831 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:46.834 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:51.339 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:55:51.839 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:51.839 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:51.844 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:51.845 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:55:56.354 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:55:56.846 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:55:56.853 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:01.365 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:56:01.839 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:01.840 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:01.861 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:01.876 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:04.143 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:04.144 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:04.149 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:04.149 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:06.385 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:56:06.836 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:06.839 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:07.865 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:07.865 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:07.869 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:07.869 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:07.992 [http-nio-8081-exec-2] INFO  com.qczy.handler.MyWebSocketHandler - User connected with key: terminalProgress:1:16a17536-4b6c-f8e9-84d2-cd1cb981201a
+2026-01-19 19:56:07.992 [http-nio-8081-exec-4] INFO  com.qczy.handler.MyWebSocketHandler - User connected with key: exceptionTerminalProgress:1:0b771e54-962d-2cad-0c62-e4f44e7fbbd3
+2026-01-19 19:56:11.393 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:56:11.840 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:11.840 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:11.844 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:11.844 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:15.515 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:15.517 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:15.519 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:15.552 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:15.576 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:15.593 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:16.414 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:56:16.832 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:16.835 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:21.424 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:56:21.845 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:21.846 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:21.850 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:21.851 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:26.431 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:56:26.840 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:26.844 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:31.436 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:56:31.832 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:31.832 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:31.835 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:31.835 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:36.445 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:56:36.841 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:36.843 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:37.852 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:37.852 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:37.853 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:37.853 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:41.452 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:56:41.840 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:41.840 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:41.843 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:41.843 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:42.859 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:42.862 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:46.470 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:56:46.832 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:46.835 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:47.852 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:47.852 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:47.855 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:47.856 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:51.486 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:56:51.843 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:51.843 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:51.848 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:51.848 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:52.862 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:52.865 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:56.498 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:56:56.841 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:56.847 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:57.860 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:57.863 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:56:57.865 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:56:57.871 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:57:01.523 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:57:01.834 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:57:01.834 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:57:01.840 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:57:01.840 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:57:02.854 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:57:02.858 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:57:06.538 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:57:07.283 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:57:07.286 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:57:08.291 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:57:08.293 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:57:08.294 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:57:08.296 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:57:11.559 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 19:57:12.292 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:57:12.292 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:57:12.296 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:57:12.296 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 19:57:13.290 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 19:57:13.294 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:19:37.372 [main] INFO  com.qczy.MyApplication - Starting MyApplication on DESKTOP-MVT8OQB with PID 18024 (D:\PROJECT\ELEC_1126\back\datamark-admin\target\classes started by Administrator in D:\PROJECT\ELEC_1126\back\datamark-admin)
+2026-01-19 20:19:37.375 [main] INFO  com.qczy.MyApplication - The following profiles are active: test
+2026-01-19 20:19:42.392 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfig' of type [com.qczy.config.AsyncConfig$$EnhancerBySpringCGLIB$$a1a3afc9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 20:19:42.646 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 20:19:43.421 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 20:19:43.431 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 20:19:43.443 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6a818392' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 20:19:43.449 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 20:19:43.479 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 20:19:46.305 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2026-01-19 20:19:46.324 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-01-19 20:19:46.326 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-19 20:19:46.329 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2026-01-19 20:19:46.455 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-19 20:19:46.455 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 8944 ms
+2026-01-19 20:19:59.641 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-19 20:20:00.620 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-19 20:20:01.613 [main] INFO  c.q.federated.service.FederatedCoordinatorService - Loaded 2 nodes from database
+2026-01-19 20:20:01.954 [main] INFO  c.q.federated.service.FederatedCoordinatorService - Loaded 10 jobs from database
+2026-01-19 20:20:03.998 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2026-01-19 20:20:04.030 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'asyncExecutor'
+2026-01-19 20:20:04.283 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2026-01-19 20:20:04.317 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2026-01-19 20:20:05.384 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2026-01-19 20:20:05.790 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@64f3991e, org.springframework.security.web.context.SecurityContextPersistenceFilter@350f18a6, org.springframework.security.web.header.HeaderWriterFilter@586737ff, org.springframework.web.filter.CorsFilter@39e3ea78, org.springframework.security.web.authentication.logout.LogoutFilter@56b05bd7, com.qczy.filter.JwtAuthenticationTokenFilter@654e6a90, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17f8db6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ddf42dd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35e689a0, org.springframework.security.web.session.SessionManagementFilter@ff5d4f1, org.springframework.security.web.access.ExceptionTranslationFilter@9e50283, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4315fe1b]
+2026-01-19 20:20:06.892 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2026-01-19 20:20:06.985 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2026-01-19 20:20:06.987 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Skipping initializing disabled plugin bean swagger v2.0
+2026-01-19 20:20:07.063 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-01-19 20:20:07.170 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:20:07.376 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2026-01-19 20:20:07.437 [main] INFO  com.qczy.MyApplication - Started MyApplication in 31.772 seconds (JVM running for 32.996)
+2026-01-19 20:20:12.440 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:20:17.487 [taskScheduler-3] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:20:22.506 [taskScheduler-2] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:20:27.527 [taskScheduler-5] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:20:28.169 [http-nio-8081-exec-7] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-19 20:20:28.170 [http-nio-8081-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-19 20:20:28.194 [http-nio-8081-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2026-01-19 20:20:28.487 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:28.582 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:28.631 [http-nio-8081-exec-4] INFO  com.qczy.controller.user.UserController - token->Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE3Njg0NTQ5NDk4NDEsImV4cCI6MTc2OTA1OTc0OX0.vx4auqsOlTy7E-E1Ye8IiYiNM-02DjEHPZjGUhpMBwWzmGiCo7SvHCGKVFGvcQ2ncdiikGOQr3XdCwBeddcq-A
+2026-01-19 20:20:28.778 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:28.790 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:28.796 [http-nio-8081-exec-10] INFO  com.qczy.controller.user.UserController - token->Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE3Njg0NTQ5NDk4NDEsImV4cCI6MTc2OTA1OTc0OX0.vx4auqsOlTy7E-E1Ye8IiYiNM-02DjEHPZjGUhpMBwWzmGiCo7SvHCGKVFGvcQ2ncdiikGOQr3XdCwBeddcq-A
+2026-01-19 20:20:28.831 [http-nio-8081-exec-10] INFO  com.qczy.controller.user.UserController - username->admin
+2026-01-19 20:20:30.294 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:30.295 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:30.303 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:30.303 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:30.336 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:30.345 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:30.370 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:30.379 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:30.406 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:30.428 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:30.456 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:30.472 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:32.537 [taskScheduler-3] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:20:35.261 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:35.264 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:35.291 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:35.297 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:36.263 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:36.268 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:36.281 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:36.286 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:37.551 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:20:40.268 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:40.272 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:40.299 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:40.304 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:42.271 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:42.275 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:42.288 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:42.295 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:42.559 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:20:45.260 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:45.265 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:45.287 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:45.291 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:45.923 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:45.923 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:45.928 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:45.928 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:47.566 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:20:50.929 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:50.934 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:52.585 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:20:55.927 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:55.928 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:20:55.930 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:55.932 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:20:57.600 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:21:00.915 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:00.933 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:02.610 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:21:05.919 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:05.921 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:05.924 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:05.924 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:07.627 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:21:10.917 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:10.920 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:12.643 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:21:15.920 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:15.922 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:15.924 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:15.925 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:17.653 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:21:20.927 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:20.931 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:22.661 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:21:25.924 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:25.927 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:25.929 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:25.931 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:27.674 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:21:30.916 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:30.919 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:32.687 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:21:35.928 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:35.928 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:35.931 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:35.931 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:37.698 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:21:40.926 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:40.931 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:42.708 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:21:45.928 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:45.930 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:45.934 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:45.935 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:47.717 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:21:50.925 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:50.933 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:52.735 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:21:55.921 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:55.923 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:21:55.924 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:55.926 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:21:57.748 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:22:00.931 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:00.934 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:02.760 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:22:05.918 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:05.919 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:05.921 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:05.923 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:07.768 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:22:10.919 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:10.922 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:12.774 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:22:15.922 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:15.924 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:15.926 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:15.928 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:17.795 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:22:20.918 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:20.921 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:22.816 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:22:26.295 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:26.297 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:26.300 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:26.302 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:27.825 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:22:31.292 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:31.296 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:32.836 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:22:35.917 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:35.920 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:35.923 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:35.925 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:37.841 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:22:41.297 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:41.303 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:42.856 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:22:46.290 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:46.292 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:46.292 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:46.295 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:47.873 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:22:51.297 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:51.300 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:52.884 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:22:56.291 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:56.293 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:22:56.295 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:56.297 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:22:57.891 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:23:01.286 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:23:01.292 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:23:02.898 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:23:06.285 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:23:06.288 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:23:06.289 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:23:06.291 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:23:07.909 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:23:11.296 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:23:11.300 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:23:12.925 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:23:16.297 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:23:16.304 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:23:16.312 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:23:16.317 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:23:17.939 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:23:21.289 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:23:21.292 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:23:22.949 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:23:26.294 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:23:26.296 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:23:26.298 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:23:26.300 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:23:27.962 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:23:31.292 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:23:31.294 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:23:32.973 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:23:36.295 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:23:36.298 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:23:36.299 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:23:36.302 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:23:37.981 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:23:42.988 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:23:48.000 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:23:53.020 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:23:58.039 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:24:00.287 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:24:00.287 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:24:00.290 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:24:00.290 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:24:03.049 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:24:08.058 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:24:13.068 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:24:18.085 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:24:23.095 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:24:28.110 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:24:33.131 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:24:38.152 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:24:43.177 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:24:48.191 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:24:53.208 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:24:58.214 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:25:00.299 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:25:00.299 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:25:00.305 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:25:00.307 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:25:03.228 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:25:08.238 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:25:13.247 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:25:18.254 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:25:23.271 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:25:28.284 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:25:33.293 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:25:38.314 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:25:43.319 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:25:48.334 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:25:53.353 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:25:58.364 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:26:00.296 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:26:00.296 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 20:26:00.300 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:26:00.300 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 20:26:03.379 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:26:08.392 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:26:13.398 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:26:18.418 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 20:26:23.448 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:37:47.472 [main] INFO  com.qczy.MyApplication - Starting MyApplication on DESKTOP-MVT8OQB with PID 16672 (D:\PROJECT\ELEC_1126\back\datamark-admin\target\classes started by Administrator in D:\PROJECT\ELEC_1126\back\datamark-admin)
+2026-01-19 21:37:47.473 [main] INFO  com.qczy.MyApplication - The following profiles are active: test
+2026-01-19 21:37:57.307 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfig' of type [com.qczy.config.AsyncConfig$$EnhancerBySpringCGLIB$$77ceb485] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 21:37:57.704 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 21:37:58.307 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 21:37:58.314 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 21:37:58.323 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@445bb139' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 21:37:58.326 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 21:37:58.378 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-19 21:37:59.717 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2026-01-19 21:37:59.717 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-01-19 21:37:59.717 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-19 21:37:59.734 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2026-01-19 21:37:59.821 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-19 21:37:59.822 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 12225 ms
+2026-01-19 21:38:07.325 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-19 21:38:07.583 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-19 21:38:08.320 [main] INFO  c.q.federated.service.FederatedCoordinatorService - Loaded 2 nodes from database
+2026-01-19 21:38:08.512 [main] INFO  c.q.federated.service.FederatedCoordinatorService - Loaded 10 jobs from database
+2026-01-19 21:38:09.739 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2026-01-19 21:38:09.741 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'asyncExecutor'
+2026-01-19 21:38:09.826 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2026-01-19 21:38:09.830 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2026-01-19 21:38:10.252 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2026-01-19 21:38:10.410 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ad1be5d, org.springframework.security.web.context.SecurityContextPersistenceFilter@e06ec83, org.springframework.security.web.header.HeaderWriterFilter@15f519f7, org.springframework.web.filter.CorsFilter@47797401, org.springframework.security.web.authentication.logout.LogoutFilter@16ccd2bc, com.qczy.filter.JwtAuthenticationTokenFilter@526e8108, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@208f7165, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ba35152, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@702f4124, org.springframework.security.web.session.SessionManagementFilter@6181bc4a, org.springframework.security.web.access.ExceptionTranslationFilter@52657d5f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@749d7c01]
+2026-01-19 21:38:10.891 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2026-01-19 21:38:10.955 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2026-01-19 21:38:10.956 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Skipping initializing disabled plugin bean swagger v2.0
+2026-01-19 21:38:10.979 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-01-19 21:38:11.034 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:38:11.047 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2026-01-19 21:38:11.058 [main] INFO  com.qczy.MyApplication - Started MyApplication in 24.895 seconds (JVM running for 25.607)
+2026-01-19 21:38:11.171 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-19 21:38:11.171 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-19 21:38:11.191 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 20 ms
+2026-01-19 21:38:11.903 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:11.911 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:11.913 [http-nio-8081-exec-4] INFO  com.qczy.controller.user.UserController - token->Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE3Njg4Mjk4OTE2MjIsImV4cCI6MTc2OTQzNDY5MX0.PLjju5Txg05ZY0ARVwa1yB_hGSgFdHopuvjxh27Sjf8DlwO2y_lTbF9ujAbVJV1Td-ze522bRlPFUn2HL6aY0g
+2026-01-19 21:38:11.948 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:11.955 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:11.955 [http-nio-8081-exec-3] INFO  com.qczy.controller.user.UserController - token->Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE3Njg4Mjk4OTE2MjIsImV4cCI6MTc2OTQzNDY5MX0.PLjju5Txg05ZY0ARVwa1yB_hGSgFdHopuvjxh27Sjf8DlwO2y_lTbF9ujAbVJV1Td-ze522bRlPFUn2HL6aY0g
+2026-01-19 21:38:11.955 [http-nio-8081-exec-3] INFO  com.qczy.controller.user.UserController - username->admin
+2026-01-19 21:38:13.569 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:13.578 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:13.606 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:13.614 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:13.768 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:13.826 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:13.906 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:13.942 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:13.988 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:14.003 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:14.055 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:14.063 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:15.886 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:15.888 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:15.894 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:15.901 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:16.059 [taskScheduler-2] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:38:20.873 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:20.873 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:21.070 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:38:25.871 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:25.873 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:25.876 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:25.878 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:26.086 [taskScheduler-3] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:38:26.718 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:26.718 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:27.844 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:27.849 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:29.035 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:29.039 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:30.872 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:30.876 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:31.102 [taskScheduler-5] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:38:34.069 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:34.073 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:34.651 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:34.651 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:34.825 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:34.829 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:35.419 [http-nio-8081-exec-4] INFO  c.q.federated.service.FederatedCoordinatorService - Stopped training job: d642fac2-54bc-42c3-b979-ec677b8f6651
+2026-01-19 21:38:35.425 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:35.430 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:36.116 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:38:36.741 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:36.744 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:36.749 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:36.753 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:36.756 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:36.756 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:36.766 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:36.770 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:37.499 [http-nio-8081-exec-8] INFO  c.q.federated.service.FederatedCoordinatorService - Stopped training job: d642fac2-54bc-42c3-b979-ec677b8f6651
+2026-01-19 21:38:37.519 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:37.524 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:39.583 [http-nio-8081-exec-10] INFO  c.q.federated.service.FederatedCoordinatorService - Stopped training job: 52efbba7-dd24-4782-9daa-1b03e8666c86
+2026-01-19 21:38:39.606 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:39.610 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:40.402 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:40.406 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:40.407 [http-nio-8081-exec-1] INFO  com.qczy.controller.user.UserController - token->Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE3Njg4Mjk4OTE2MjIsImV4cCI6MTc2OTQzNDY5MX0.PLjju5Txg05ZY0ARVwa1yB_hGSgFdHopuvjxh27Sjf8DlwO2y_lTbF9ujAbVJV1Td-ze522bRlPFUn2HL6aY0g
+2026-01-19 21:38:40.429 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:40.439 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:40.440 [http-nio-8081-exec-9] INFO  com.qczy.controller.user.UserController - token->Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE3Njg4Mjk4OTE2MjIsImV4cCI6MTc2OTQzNDY5MX0.PLjju5Txg05ZY0ARVwa1yB_hGSgFdHopuvjxh27Sjf8DlwO2y_lTbF9ujAbVJV1Td-ze522bRlPFUn2HL6aY0g
+2026-01-19 21:38:40.445 [http-nio-8081-exec-9] INFO  com.qczy.controller.user.UserController - username->admin
+2026-01-19 21:38:40.994 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:40.994 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:41.003 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:41.003 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:41.134 [taskScheduler-2] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:38:41.671 [http-nio-8081-exec-7] INFO  c.q.federated.service.FederatedCoordinatorService - Stopped training job: 52efbba7-dd24-4782-9daa-1b03e8666c86
+2026-01-19 21:38:41.846 [http-nio-8081-exec-2] INFO  c.q.federated.service.FederatedCoordinatorService - Stopped training job: d642fac2-54bc-42c3-b979-ec677b8f6651
+2026-01-19 21:38:43.737 [http-nio-8081-exec-5] INFO  c.q.federated.service.FederatedCoordinatorService - Stopped training job: 52efbba7-dd24-4782-9daa-1b03e8666c86
+2026-01-19 21:38:43.923 [http-nio-8081-exec-3] INFO  c.q.federated.service.FederatedCoordinatorService - Stopped training job: 52efbba7-dd24-4782-9daa-1b03e8666c86
+2026-01-19 21:38:45.974 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:45.978 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:46.150 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:38:46.906 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:46.909 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:49.003 [http-nio-8081-exec-1] INFO  c.q.federated.service.FederatedCoordinatorService - Deleted training job: 52efbba7-dd24-4782-9daa-1b03e8666c86
+2026-01-19 21:38:49.023 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:49.027 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:50.985 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:50.987 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:50.990 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:50.992 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:51.169 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:38:55.980 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:38:55.986 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:38:56.184 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:39:01.203 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:39:01.857 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:01.860 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:01.861 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:01.863 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:06.219 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:39:06.872 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:06.875 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:11.230 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:39:11.868 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:11.870 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:11.873 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:11.873 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:16.244 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:39:16.870 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:16.874 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:21.254 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:39:21.865 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:21.866 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:21.868 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:21.870 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:26.265 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:39:26.872 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:26.875 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:31.284 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:39:31.867 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:31.869 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:31.870 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:31.872 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:36.298 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:39:36.869 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:36.872 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:41.314 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:39:41.867 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:41.868 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:41.870 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:41.872 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:46.332 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:39:46.868 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:46.871 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:51.349 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:39:51.865 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:51.867 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:51.868 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:51.871 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:39:56.365 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:39:56.867 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:39:56.870 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:40:01.383 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:40:06.400 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:40:11.415 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:40:16.432 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:40:21.448 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:40:26.464 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:40:31.481 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:40:36.497 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:40:36.865 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:40:36.868 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:40:36.869 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:40:36.871 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:40:41.515 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:40:46.533 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:40:51.548 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:40:56.563 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:41:01.581 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:41:06.598 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:41:11.613 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:41:16.630 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:41:21.646 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:41:26.667 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:41:31.680 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:41:36.697 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:41:36.859 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:36.862 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:36.864 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:41:36.870 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:41:40.462 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:40.470 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:40.472 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:41:40.474 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:41:41.716 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:41:43.490 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:43.490 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:43.498 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:41:43.498 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:41:45.861 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:45.861 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:41:46.729 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:41:48.862 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:48.865 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:41:50.867 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:50.867 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:50.872 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:41:50.872 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:41:51.745 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:41:53.861 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:53.861 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:53.867 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:41:53.867 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:41:55.860 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:55.865 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:41:56.762 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:41:58.858 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:41:58.893 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:00.861 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:00.861 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:00.865 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:00.865 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:01.784 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:42:02.578 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:02.591 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:02.610 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:02.627 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:03.489 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:03.490 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:03.505 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:03.507 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:05.462 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:05.467 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:05.974 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:05.984 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:06.802 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:42:11.811 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:42:16.825 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:42:16.992 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:16.997 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:16.998 [http-nio-8081-exec-10] INFO  com.qczy.controller.user.UserController - token->Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE3Njg4Mjk4OTE2MjIsImV4cCI6MTc2OTQzNDY5MX0.PLjju5Txg05ZY0ARVwa1yB_hGSgFdHopuvjxh27Sjf8DlwO2y_lTbF9ujAbVJV1Td-ze522bRlPFUn2HL6aY0g
+2026-01-19 21:42:17.051 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:17.056 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:17.057 [http-nio-8081-exec-6] INFO  com.qczy.controller.user.UserController - token->Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE3Njg4Mjk4OTE2MjIsImV4cCI6MTc2OTQzNDY5MX0.PLjju5Txg05ZY0ARVwa1yB_hGSgFdHopuvjxh27Sjf8DlwO2y_lTbF9ujAbVJV1Td-ze522bRlPFUn2HL6aY0g
+2026-01-19 21:42:17.061 [http-nio-8081-exec-6] INFO  com.qczy.controller.user.UserController - username->admin
+2026-01-19 21:42:18.232 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:18.232 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:18.237 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:18.237 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:18.267 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:18.274 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:18.299 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:18.309 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:18.331 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:18.338 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:18.355 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:18.364 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:20.927 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:20.927 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:20.931 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:20.931 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:21.846 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:42:25.922 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:25.926 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:26.860 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:42:29.670 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:29.674 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:29.675 [http-nio-8081-exec-6] INFO  com.qczy.controller.user.UserController - token->Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE3Njg4Mjk4OTE2MjIsImV4cCI6MTc2OTQzNDY5MX0.PLjju5Txg05ZY0ARVwa1yB_hGSgFdHopuvjxh27Sjf8DlwO2y_lTbF9ujAbVJV1Td-ze522bRlPFUn2HL6aY0g
+2026-01-19 21:42:29.700 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:29.706 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:29.707 [http-nio-8081-exec-1] INFO  com.qczy.controller.user.UserController - token->Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE3Njg4Mjk4OTE2MjIsImV4cCI6MTc2OTQzNDY5MX0.PLjju5Txg05ZY0ARVwa1yB_hGSgFdHopuvjxh27Sjf8DlwO2y_lTbF9ujAbVJV1Td-ze522bRlPFUn2HL6aY0g
+2026-01-19 21:42:29.715 [http-nio-8081-exec-1] INFO  com.qczy.controller.user.UserController - username->admin
+2026-01-19 21:42:30.164 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:30.164 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:30.170 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:30.170 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:31.882 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:42:35.147 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:35.150 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:36.894 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:42:40.860 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:40.863 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:40.864 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:40.867 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:41.910 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:42:45.863 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:45.865 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:46.926 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:42:50.863 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:50.866 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:50.866 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:50.869 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:51.942 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:42:55.762 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:42:55.765 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:42:56.961 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:43:00.145 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:00.147 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:00.147 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:00.150 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:01.976 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:43:05.147 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:05.150 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:06.993 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:43:10.860 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:10.863 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:10.863 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:10.866 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:12.011 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:43:15.863 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:15.865 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:17.027 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:43:20.860 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:20.862 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:20.862 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:20.865 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:22.043 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:43:25.862 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:25.862 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:27.060 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:43:30.856 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:30.858 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:30.859 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:30.861 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:32.078 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:43:35.862 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:35.862 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:37.091 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:43:40.862 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:40.863 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:40.864 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:40.866 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:42.110 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:43:45.861 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:45.864 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:47.126 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:43:50.861 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:50.864 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:50.864 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:50.866 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:52.142 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:43:55.862 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:43:55.864 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:43:57.160 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:44:00.861 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:00.863 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:00.864 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:00.867 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:02.195 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:44:05.861 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:05.864 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:07.209 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:44:12.225 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:44:13.795 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:13.802 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:13.805 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:13.814 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:15.149 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:15.151 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:17.242 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:44:20.144 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:20.147 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:20.147 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:20.150 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:22.260 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:44:25.162 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:25.164 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:27.276 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:44:30.154 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:30.157 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:30.157 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:30.162 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:32.290 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:44:35.160 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:35.163 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:37.309 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:44:40.861 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:40.864 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:40.864 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:40.867 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:42.329 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:44:45.150 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:45.154 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:47.248 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:47.253 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:47.349 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:44:47.886 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:47.889 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:47.892 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:47.928 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:49.343 [http-nio-8081-exec-7] INFO  c.q.federated.service.FederatedCoordinatorService - Deleted training job: 79f7dba4-befe-4507-a2d9-b7d1b1914a4a
+2026-01-19 21:44:49.361 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:49.366 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:50.146 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:50.147 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:50.151 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:50.152 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:52.358 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:44:52.880 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:52.883 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:55.144 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:55.146 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:57.373 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:44:57.878 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:57.878 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:57.878 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:57.878 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:44:58.775 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:44:58.775 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:00.157 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:00.157 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:00.160 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:00.160 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:00.873 [http-nio-8081-exec-3] INFO  c.q.federated.service.FederatedCoordinatorService - Deleted training job: d642fac2-54bc-42c3-b979-ec677b8f6651
+2026-01-19 21:45:00.895 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:00.897 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:02.385 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:45:02.876 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:02.878 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:05.144 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:05.147 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:07.408 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:45:07.874 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:07.877 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:07.877 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:07.904 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:10.859 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:10.859 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:10.861 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:10.861 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:12.423 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:45:12.879 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:12.883 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:14.100 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:14.100 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:15.143 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:15.145 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:16.174 [http-nio-8081-exec-3] INFO  c.q.federated.service.FederatedCoordinatorService - Deleted training job: b99ed807-5862-496a-8d70-7e95b47089cc
+2026-01-19 21:45:16.194 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:16.197 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:17.439 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:45:17.873 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:17.876 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:17.876 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:17.889 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:20.144 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:20.144 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:20.148 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:20.148 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:22.446 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:45:22.880 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:22.884 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:25.156 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:25.156 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:27.464 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:45:27.874 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:27.876 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:27.877 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:27.879 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:30.144 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:30.144 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:30.146 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:30.146 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:32.474 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:45:32.876 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:32.878 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:35.158 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:35.161 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:37.488 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:45:37.873 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:37.873 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:37.873 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:37.873 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:40.156 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:40.156 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:40.158 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:40.159 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:42.504 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:45:42.875 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:42.878 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:45.156 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:45.156 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:47.524 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:45:47.878 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:47.880 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:47.881 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:47.883 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:50.159 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:50.159 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:50.161 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:50.161 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:52.540 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:45:52.876 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:52.878 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:55.157 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:55.159 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:57.556 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:45:57.876 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:57.876 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:45:57.882 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:45:57.884 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:00.142 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:00.142 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:00.145 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:00.145 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:02.573 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:46:02.874 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:02.876 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:05.144 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:05.146 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:07.594 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:46:07.878 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:07.880 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:07.881 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:07.884 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:10.157 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:10.157 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:10.160 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:10.160 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:10.177 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:10.179 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:12.254 [http-nio-8081-exec-1] INFO  c.q.federated.service.FederatedCoordinatorService - Stopped training job: 904d66f0-fb3e-433b-b2c8-8304621a3db0
+2026-01-19 21:46:12.272 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:12.274 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:12.607 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:46:12.871 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:12.871 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:15.156 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:15.158 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:16.900 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:16.902 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:17.621 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:46:17.873 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:17.875 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:17.876 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:17.878 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:18.980 [http-nio-8081-exec-4] INFO  c.q.federated.service.FederatedCoordinatorService - Stopped training job: f2288420-1a56-40b1-957f-e6df3c30d82e
+2026-01-19 21:46:18.997 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:19.000 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:20.148 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:20.148 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:20.150 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:20.150 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:22.623 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:22.623 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:22.642 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:46:22.879 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:22.881 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:24.687 [http-nio-8081-exec-6] INFO  c.q.federated.service.FederatedCoordinatorService - Stopped training job: a1b9dc08-f695-4378-9513-b96a3dcd7491
+2026-01-19 21:46:24.729 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:24.733 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:25.139 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:25.139 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:26.892 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:26.895 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:27.657 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:46:27.871 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:27.871 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:27.871 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:27.871 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:28.964 [http-nio-8081-exec-4] INFO  c.q.federated.service.FederatedCoordinatorService - Stopped training job: 63505037-0761-4689-bb5f-3e537ee1b933
+2026-01-19 21:46:28.982 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:28.985 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:30.149 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:30.149 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:30.151 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:30.151 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:31.497 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:31.504 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:32.670 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:46:32.875 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:32.878 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:33.572 [http-nio-8081-exec-8] INFO  c.q.federated.service.FederatedCoordinatorService - Stopped training job: 9cb410ef-8e24-4982-87ad-c7a4215631ae
+2026-01-19 21:46:33.590 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:33.593 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:35.155 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:35.157 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:36.163 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:36.166 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:37.687 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:46:37.887 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:37.889 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:37.890 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:37.891 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:38.245 [http-nio-8081-exec-4] INFO  c.q.federated.service.FederatedCoordinatorService - Deleted training job: 904d66f0-fb3e-433b-b2c8-8304621a3db0
+2026-01-19 21:46:38.260 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:38.262 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:40.004 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:40.007 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:40.154 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:40.154 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:40.156 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:40.156 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:42.103 [http-nio-8081-exec-5] INFO  c.q.federated.service.FederatedCoordinatorService - Deleted training job: f2288420-1a56-40b1-957f-e6df3c30d82e
+2026-01-19 21:46:42.120 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:42.122 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:42.704 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:46:42.874 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:42.876 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:44.049 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:44.049 [http-nio-8081-exec-3] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:45.156 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:45.158 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:46.137 [http-nio-8081-exec-3] INFO  c.q.federated.service.FederatedCoordinatorService - Deleted training job: a1b9dc08-f695-4378-9513-b96a3dcd7491
+2026-01-19 21:46:46.150 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:46.153 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:47.722 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:46:47.873 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:47.873 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:47.873 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:47.873 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:48.103 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:48.106 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:50.154 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:50.154 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:50.157 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:50.157 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:50.206 [http-nio-8081-exec-5] INFO  c.q.federated.service.FederatedCoordinatorService - Deleted training job: 63505037-0761-4689-bb5f-3e537ee1b933
+2026-01-19 21:46:50.219 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:50.222 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:52.739 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:46:52.875 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:52.877 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:53.331 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:53.333 [http-nio-8081-exec-10] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:55.154 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:55.157 [http-nio-8081-exec-6] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:55.413 [http-nio-8081-exec-10] INFO  c.q.federated.service.FederatedCoordinatorService - Deleted training job: 9cb410ef-8e24-4982-87ad-c7a4215631ae
+2026-01-19 21:46:55.424 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:55.426 [http-nio-8081-exec-9] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:57.755 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:46:57.884 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:57.884 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:46:57.886 [http-nio-8081-exec-7] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:46:57.886 [http-nio-8081-exec-8] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:47:00.143 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:47:00.143 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:47:00.145 [http-nio-8081-exec-2] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:47:00.145 [http-nio-8081-exec-5] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:47:02.761 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-01-19 21:47:03.869 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:47:03.871 [http-nio-8081-exec-1] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin
+2026-01-19 21:47:05.857 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - checking username:admin
+2026-01-19 21:47:05.860 [http-nio-8081-exec-4] INFO  com.qczy.filter.JwtAuthenticationTokenFilter - authenticated user:admin

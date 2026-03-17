@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import torch
 from flwr.app import ArrayRecord, ConfigRecord, Context, MetricRecord
 from flwr.serverapp import Grid, ServerApp
@@ -39,7 +41,11 @@ def main(grid: Grid, context: Context) -> None:
 
     print("\nSaving final model to disk...")
     state_dict = result.arrays.to_torch_state_dict()
-    torch.save(state_dict, "final_model.pt")
+    output_path = Path("final_model.pt")
+    if hasattr(TASK_MODULE, "save_model"):
+        TASK_MODULE.save_model(state_dict, output_path)
+    else:
+        torch.save(state_dict, output_path)
 
 
 def global_evaluate(server_round: int, arrays: ArrayRecord) -> MetricRecord:
@@ -49,7 +55,7 @@ def global_evaluate(server_round: int, arrays: ArrayRecord) -> MetricRecord:
     if TASK_MODULE is None:
         TASK_MODULE = get_task()
 
-    model = TASK_MODULE.Net()
+    model = TASK_MODULE.Net()#从模块化任务中获取模型
     model.load_state_dict(arrays.to_torch_state_dict())
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model.to(device)
