@@ -1,4 +1,4 @@
-2026-03-24 16:59:00.109 [http-nio-8081-exec-4] ERROR com.qczy.common.exception.GlobalExceptionHandler - 未知异常！原因是:
+2026-03-14 11:04:53.476 [http-nio-8081-exec-1] ERROR com.qczy.common.exception.GlobalExceptionHandler - 未知异常！原因是:
 java.lang.NullPointerException: null
 	at com.qczy.controller.user.UserController.getUserRoutes(UserController.java:149)
 	at com.qczy.controller.user.UserController$$FastClassBySpringCGLIB$$cfaeabe8.invoke(<generated>)
@@ -10,7 +10,7 @@ java.lang.NullPointerException: null
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
-	at com.qczy.controller.user.UserController$$EnhancerBySpringCGLIB$$f6a6db99.getUserRoutes(<generated>)
+	at com.qczy.controller.user.UserController$$EnhancerBySpringCGLIB$$900e992e.getUserRoutes(<generated>)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -18,6 +18,32 @@ const { baseURL, otherBaseURL } = getServiceBaseURL(
   isHttpProxy,
 );
 
+function getBackendMessage(
+  payload: Partial<App.Service.Response> | null | undefined,
+) {
+  if (!payload) return "";
+
+  return payload.msg || payload.message || "";
+}
+
+function normalizeErrorMessage(input: unknown, fallback = "请求失败") {
+  if (typeof input === "string" && input.trim()) {
+    return input;
+  }
+
+  if (input && typeof input === "object") {
+    const backendMessage = getBackendMessage(
+      input as Partial<App.Service.Response>,
+    );
+
+    if (backendMessage) {
+      return backendMessage;
+    }
+  }
+
+  return fallback;
+}
+
 export const request = createFlatRequest<
   App.Service.Response,
   RequestInstanceState
@@ -48,6 +74,8 @@ export const request = createFlatRequest<
     },
     async onBackendFail(response, instance) {
       const authStore = useAuthStore();
+      const backendCode = String(response.data.code || "");
+      const backendMessage = getBackendMessage(response.data);
 
       function handleLogout() {
         authStore.resetStore();
@@ -58,14 +86,14 @@ export const request = createFlatRequest<
         window.removeEventListener("beforeunload", handleLogout);
 
         request.state.errMsgStack = request.state.errMsgStack.filter(
-          (msg) => msg !== response.data.msg,
+          (msg) => msg !== backendMessage,
         );
       }
 
       // when the backend response code is in `logoutCodes`, it means the user will be logged out and redirected to login page
       const logoutCodes =
         import.meta.env.VITE_SERVICE_LOGOUT_CODES?.split(",") || [];
-      if (logoutCodes.includes(response.data.code)) {
+      if (logoutCodes.includes(backendCode)) {
         handleLogout();
         return null;
       }
@@ -74,12 +102,12 @@ export const request = createFlatRequest<
       const modalLogoutCodes =
         import.meta.env.VITE_SERVICE_MODAL_LOGOUT_CODES?.split(",") || [];
       if (
-        modalLogoutCodes.includes(response.data.code) &&
-        !request.state.errMsgStack?.includes(response.data.msg)
+        modalLogoutCodes.includes(backendCode) &&
+        !request.state.errMsgStack?.includes(backendMessage)
       ) {
         request.state.errMsgStack = [
           ...(request.state.errMsgStack || []),
-          response.data.msg,
+          backendMessage,
         ];
 
         // prevent the user from refreshing the page
@@ -87,7 +115,7 @@ export const request = createFlatRequest<
 
         window.$dialog?.error({
           title: $t("common.error"),
-          content: response.data.msg,
+          content: backendMessage,
           positiveText: $t("common.confirm"),
           maskClosable: false,
           closeOnEsc: false,
@@ -107,7 +135,7 @@ export const request = createFlatRequest<
       const expiredTokenCodes =
         import.meta.env.VITE_SERVICE_EXPIRED_TOKEN_CODES?.split(",") || [];
       if (
-        expiredTokenCodes.includes(response.data.code) &&
+        expiredTokenCodes.includes(backendCode) &&
         !request.state.isRefreshingToken
       ) {
         request.state.isRefreshingToken = true;
@@ -134,8 +162,8 @@ export const request = createFlatRequest<
 
       // get backend error message and code
       if (error.code === BACKEND_ERROR_CODE) {
-        message = error.response?.data?.msg || message;
-        backendErrorCode = error.response?.data?.code || "";
+        message = getBackendMessage(error.response?.data) || message;
+        backendErrorCode = String(error.response?.data?.code || "");
       }
 
       // the error message is displayed in the modal
@@ -152,7 +180,7 @@ export const request = createFlatRequest<
         return;
       }
 
-      showErrorMsg(request.state, message);
+      showErrorMsg(request.state, normalizeErrorMessage(message, error.message));
     },
   },
 );

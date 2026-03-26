@@ -1,0 +1,2 @@
+ALTER TABLE `fl_task`
+ADD COLUMN IF NOT EXISTS `node_count` INT DEFAULT NULL AFTER `num_rounds`;

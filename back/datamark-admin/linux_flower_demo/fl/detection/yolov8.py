@@ -6,6 +6,7 @@ import copy
 import os
 import random
 import shutil
+from ast import literal_eval
 from dataclasses import dataclass, field
 from pathlib import Path
 from threading import Lock
@@ -14,6 +15,11 @@ from xml.etree import ElementTree as ET
 
 import torch
 import torch.nn as nn
+
+try:
+    import yaml
+except Exception:  # pragma: no cover - optional dependency path
+    yaml = None
 
 try:
     from ultralytics import YOLO
@@ -44,6 +50,7 @@ RUNS_ROOT = Path(
         PROJECT_ROOT / ".flower_yolo_runs",
     )
 ).resolve()
+DATASET_FORMAT = os.getenv("FLOWER_DETECTION_DATASET_FORMAT", "").strip().upper()
 
 DEFAULT_BATCH_SIZE = int(os.getenv("FLOWER_BATCH_SIZE", "8"))
 VAL_RATIO = float(os.getenv("FLOWER_DETECTION_VAL_RATIO", "0.2"))
@@ -184,7 +191,284 @@ def _parse_voc(xml_path: Path) -> tuple[int, int, tuple[VocBox, ...]]:
     return int(width), int(height), tuple(boxes)
 
 
-def _discover_samples() -> list[RawSample]:
+def _resolve_dataset_format() -> str:
+    if DATASET_FORMAT in {"VOC", "YOLO"}:
+        return DATASET_FORMAT
+    if (DATASET_ROOT / "data.yaml").is_file():
+        return "YOLO"
+    if (DATASET_ROOT / "train" / "labels").is_dir():
+        return "YOLO"
+    if (DATASET_ROOT / "valid" / "labels").is_dir():
+        return "YOLO"
+    if (DATASET_ROOT / "val" / "labels").is_dir():
+        return "YOLO"
+    return "VOC"
+
+
+def _parse_yaml_scalar(value: str) -> Any:
+    text = value.strip()
+    if not text:
+        return ""
+    lower_text = text.lower()
+    if lower_text == "true":
+        return True
+    if lower_text == "false":
+        return False
+    try:
+        return literal_eval(text)
+    except (ValueError, SyntaxError):
+        return text.strip("'\"")
+
+
+def _load_dataset_yaml(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+
+    raw_text = path.read_text(encoding="utf-8")
+    if yaml is not None:
+        loaded = yaml.safe_load(raw_text)
+        if isinstance(loaded, dict):
+            return loaded
+
+    payload: dict[str, Any] = {}
+    current_key: str | None = None
+    current_mapping: dict[Any, Any] = {}
+    for raw_line in raw_text.splitlines():
+        line = raw_line.split("#", 1)[0].rstrip()
+        if not line.strip():
+            continue
+
+        if line[:1].isspace():
+            if current_key is None:
+                continue
+            stripped = line.strip()
+            if ":" not in stripped:
+                continue
+            child_key, child_value = stripped.split(":", 1)
+            current_mapping[_parse_yaml_scalar(child_key)] = _parse_yaml_scalar(child_value)
+            continue
+
+        if current_key is not None:
+            payload[current_key] = current_mapping
+            current_key = None
+            current_mapping = {}
+
+        key, value = line.split(":", 1)
+        key = key.strip()
+        value = value.strip()
+        if value:
+            payload[key] = _parse_yaml_scalar(value)
+        else:
+            current_key = key
+            current_mapping = {}
+
+    if current_key is not None:
+        payload[current_key] = current_mapping
+
+    return payload
+
+
+def _normalize_class_names(names_value: Any) -> tuple[str, ...]:
+    if isinstance(names_value, dict):
+        items: list[tuple[int, str]] = []
+        for key, value in names_value.items():
+            try:
+                index = int(key)
+            except (TypeError, ValueError):
+                continue
+            items.append((index, str(value)))
+        if items:
+            return tuple(name for _, name in sorted(items, key=lambda item: item[0]))
+
+    if isinstance(names_value, (list, tuple)):
+        return tuple(str(value) for value in names_value)
+
+    if isinstance(names_value, str):
+        parsed = _parse_yaml_scalar(names_value)
+        if parsed != names_value:
+            return _normalize_class_names(parsed)
+
+    return ()
+
+
+def _resolve_dataset_base_dir(dataset_yaml: Path, payload: dict[str, Any]) -> Path:
+    configured_path = payload.get("path")
+    if not configured_path:
+        return DATASET_ROOT
+
+    candidate = Path(str(configured_path))
+    if candidate.is_absolute():
+        return candidate.resolve()
+    return (dataset_yaml.parent / candidate).resolve()
+
+
+def _resolve_split_source(base_dir: Path, split_value: Any) -> Path | None:
+    if not split_value:
+        return None
+    candidate = Path(str(split_value))
+    if candidate.is_absolute():
+        return candidate.resolve()
+    return (base_dir / candidate).resolve()
+
+
+def _iter_image_paths_from_source(source: Path | None) -> list[Path]:
+    if source is None or not source.exists():
+        return []
+
+    if source.is_file():
+        image_paths: list[Path] = []
+        for raw_line in source.read_text(encoding="utf-8").splitlines():
+            line = raw_line.strip()
+            if not line:
+                continue
+            candidate = Path(line)
+            if not candidate.is_absolute():
+                candidate = (source.parent / candidate).resolve()
+            else:
+                candidate = candidate.resolve()
+            if candidate.suffix.lower() in IMAGE_SUFFIXES and candidate.exists():
+                image_paths.append(candidate)
+        return sorted(image_paths)
+
+    return sorted(
+        path.resolve()
+        for path in source.rglob("*")
+        if path.is_file() and path.suffix.lower() in IMAGE_SUFFIXES
+    )
+
+
+def _resolve_yolo_label_path(image_path: Path) -> Path | None:
+    parts = list(image_path.parts)
+    for index in range(len(parts) - 1, -1, -1):
+        if parts[index] != "images":
+            continue
+        candidate = Path(*parts[:index], "labels", *parts[index + 1 :]).with_suffix(".txt")
+        if candidate.exists():
+            return candidate.resolve()
+
+    candidate = image_path.with_suffix(".txt")
+    if candidate.exists():
+        return candidate.resolve()
+    return None
+
+
+def _read_yolo_class_ids(label_path: Path) -> set[int]:
+    class_ids: set[int] = set()
+    for raw_line in label_path.read_text(encoding="utf-8").splitlines():
+        stripped = raw_line.strip()
+        if not stripped:
+            continue
+        parts = stripped.split()
+        if not parts:
+            continue
+        try:
+            class_ids.add(int(float(parts[0])))
+        except (TypeError, ValueError):
+            continue
+    return class_ids
+
+
+def _collect_yolo_samples(split_name: str, source: Path | None) -> list[ConvertedSample]:
+    image_paths = _iter_image_paths_from_source(source)
+    if not image_paths:
+        return []
+
+    samples: list[ConvertedSample] = []
+    missing_labels = 0
+    empty_labels = 0
+    for image_path in image_paths:
+        label_path = _resolve_yolo_label_path(image_path)
+        if label_path is None:
+            missing_labels += 1
+            continue
+        if not _read_yolo_class_ids(label_path):
+            empty_labels += 1
+            continue
+        samples.append(
+            ConvertedSample(
+                image_path=image_path,
+                label_path=label_path,
+            )
+        )
+
+    print(
+        f"Loaded YOLO split '{split_name}': kept {len(samples)}/{len(image_paths)} images, "
+        f"skipped {missing_labels} missing labels, skipped {empty_labels} empty labels."
+    )
+    return samples
+
+
+def _build_yolo_class_names(
+    payload: dict[str, Any],
+    samples: list[ConvertedSample],
+) -> tuple[str, ...]:
+    class_names = _normalize_class_names(payload.get("names"))
+    if class_names:
+        return class_names
+
+    num_classes = payload.get("nc")
+    if isinstance(num_classes, int) and num_classes > 0:
+        return tuple(str(index) for index in range(num_classes))
+    if isinstance(num_classes, str):
+        try:
+            parsed_num_classes = int(num_classes)
+        except ValueError:
+            parsed_num_classes = 0
+        if parsed_num_classes > 0:
+            return tuple(str(index) for index in range(parsed_num_classes))
+
+    max_class_id = -1
+    for sample in samples:
+        class_ids = _read_yolo_class_ids(sample.label_path)
+        if class_ids:
+            max_class_id = max(max_class_id, max(class_ids))
+    if max_class_id >= 0:
+        return tuple(str(index) for index in range(max_class_id + 1))
+
+    raise ValueError(f"Unable to determine class names for YOLO dataset: {DATASET_ROOT}")
+
+
+def _prepare_yolo_dataset() -> PreparedDataset:
+    dataset_yaml = DATASET_ROOT / "data.yaml"
+    payload = _load_dataset_yaml(dataset_yaml) if dataset_yaml.exists() else {}
+    base_dir = _resolve_dataset_base_dir(dataset_yaml, payload) if dataset_yaml.exists() else DATASET_ROOT
+
+    train_source = _resolve_split_source(base_dir, payload.get("train"))
+    if train_source is None:
+        train_source = _resolve_split_source(base_dir, "train/images")
+
+    val_source = _resolve_split_source(base_dir, payload.get("val") or payload.get("valid"))
+    if val_source is None:
+        for candidate in ("valid/images", "val/images", "test/images"):
+            candidate_path = _resolve_split_source(base_dir, candidate)
+            if candidate_path is not None and candidate_path.exists():
+                val_source = candidate_path
+                break
+
+    train_samples = _collect_yolo_samples("train", train_source)
+    val_samples = _collect_yolo_samples("val", val_source)
+    all_samples = train_samples + val_samples
+
+    if not all_samples:
+        raise FileNotFoundError(f"No YOLO samples found under: {DATASET_ROOT}")
+
+    class_names = _build_yolo_class_names(payload, all_samples)
+
+    if not train_samples:
+        train_samples = list(val_samples)
+    if not val_samples:
+        train_tuple, val_tuple = _split_samples(list(train_samples))
+        train_samples = list(train_tuple)
+        val_samples = list(val_tuple)
+
+    return PreparedDataset(
+        class_names=class_names,
+        train_samples=tuple(train_samples),
+        val_samples=tuple(val_samples),
+    )
+
+
+def _discover_voc_samples() -> list[RawSample]:
     if not DATASET_ROOT.exists():
         raise FileNotFoundError(f"Detection dataset not found: {DATASET_ROOT}")
 
@@ -301,7 +585,14 @@ def _prepare_dataset() -> PreparedDataset:
         if _PREPARED_DATASET is not None:
             return _PREPARED_DATASET
 
-        raw_samples = _discover_samples()
+        dataset_format = _resolve_dataset_format()
+        if dataset_format == "YOLO":
+            _PREPARED_DATASET = _prepare_yolo_dataset()
+            return _PREPARED_DATASET
+        if dataset_format != "VOC":
+            raise ValueError(f"Unsupported detection dataset format: {dataset_format}")
+
+        raw_samples = _discover_voc_samples()
         class_names = tuple(sorted({box.label for sample in raw_samples for box in sample.boxes}))
         class_to_id = {name: idx for idx, name in enumerate(class_names)}
 

@@ -17,7 +17,7 @@ import org.springframework.web.socket.config.annotation.EnableWebSocket;
  * @Description: 启动类
  */
 @SpringBootApplication
-@MapperScan(basePackages = {"com.qczy.mapper","com.qczy.federated.mapper"})
+@MapperScan(basePackages = {"com.qczy.mapper","com.qczy.fltask.mapper"})
 @EnableScheduling //开启定时任务
 @EnableAsync
 public class MyApplication {

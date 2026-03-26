@@ -1,91 +1,146 @@
-import { request } from '../request';
+import { request } from '../request'
 
-/** 获取全部联邦节点 */
-export function fetchFederatedNodes() {
-  return request<any>({
-    url: '/federated/nodes',
-    method: 'get'
-  });
+export type FlTaskStatus = 'CREATED' | 'RUNNING' | 'COMPLETED' | 'FAILED' | 'STOPPED'
+
+export type FlMetricMap = Record<string, number | null>
+
+export interface FlRunnerHealth {
+  ok: boolean
+  running: boolean
+  activeTaskId: string | null
+  appDir: string
+  runsDir: string
+  datasetsRoot: string
 }
 
-/** 注册节点 */
-export function registerFederatedNode(data: {
-  nodeId: string;
-  host: string;
-  port: number;
-  metadata?: Record<string, any>;
-}) {
-  return request<any>({
-    url: '/federated/register',
+export interface FlDataset {
+  name: string
+  path: string
+  format: string
+}
+
+export interface FlTaskItem {
+  taskId: string
+  name: string
+  status: FlTaskStatus
+  taskType: string
+  datasetName: string
+  datasetPath: string
+  datasetFormat: string
+  modelSource: string
+  numRounds: number | null
+  nodeCount: number | null
+  currentRound: number | null
+  progressPercent: number | null
+  finalMetricName: string | null
+  finalMetricValue: number | null
+  latestMetrics: FlMetricMap | null
+  finalMetrics: FlMetricMap | null
+  finalModelPath: string | null
+  workDir: string | null
+  errorMessage: string | null
+  createdAt: string | null
+  startedAt: string | null
+  finishedAt: string | null
+}
+
+export interface FlTaskListResult {
+  total: number
+  current: number
+  size: number
+  records: FlTaskItem[]
+}
+
+export interface FlTaskRoundMetric {
+  roundNo: number
+  loss: number | null
+  primaryMetric: number | null
+  metrics: FlMetricMap
+  createdAt: string | null
+}
+
+export interface FetchFlTasksParams {
+  status?: FlTaskStatus | ''
+  name?: string
+  page?: number
+  size?: number
+}
+
+export interface CreateFlTaskPayload {
+  name: string
+  taskType: 'detection' | 'classification'
+  datasetName: string
+  datasetPath: string
+  datasetFormat: string
+  modelSource: string
+  numRounds: number
+  nodeCount: number
+  localEpochs: number
+  batchSize: number
+  learningRate: number
+  fractionEvaluate: number
+}
+
+export interface FlTaskActionResult {
+  taskId: string
+  status: FlTaskStatus
+  currentRound?: number
+}
+
+export function fetchFlRunnerHealth() {
+  return request<FlRunnerHealth>({
+    url: '/api/fl-runner/health',
+    method: 'get'
+  })
+}
+
+export function fetchFlDatasets() {
+  return request<FlDataset[]>({
+    url: '/api/fl-datasets',
+    method: 'get'
+  })
+}
+
+export function fetchFlTasks(params?: FetchFlTasksParams) {
+  return request<FlTaskListResult>({
+    url: '/api/fl-tasks',
+    method: 'get',
+    params
+  })
+}
+
+export function createFlTask(data: CreateFlTaskPayload) {
+  return request<FlTaskItem>({
+    url: '/api/fl-tasks',
     method: 'post',
     data
-  });
+  })
 }
 
-/** 主动上报心跳 */
-export function sendFederatedHeartbeat(nodeId: string, metadata?: Record<string, any>) {
-  return request<any>({
-    url: `/federated/heartbeat/${nodeId}`,
-    method: 'post',
-    data: metadata || {}
-  });
-}
-
-/** 删除节点 */
-export function deleteFederatedNode(nodeId: string) {
-  return request<any>({
-    url: `/federated/nodes/${nodeId}`,
-    method: 'delete'
-  });
-}
-
-/** 获取任务列表 */
-export function fetchFederatedJobs() {
-  return request<any>({
-    url: '/federated/jobs',
+export function fetchFlTaskDetail(taskId: string) {
+  return request<FlTaskItem>({
+    url: `/api/fl-tasks/${taskId}`,
     method: 'get'
-  });
+  })
 }
 
-interface CreateJobPayload {
-  modelType: string;
-  hyperParameters: Record<string, any>;
-  participantNodeIds: string[];
-  baselineAccuracy?: number | null;
-  allowedDropPercent?: number;
+export function fetchFlTaskRounds(taskId: string) {
+  return request<FlTaskRoundMetric[]>({
+    url: `/api/fl-tasks/${taskId}/rounds`,
+    method: 'get'
+  })
 }
 
-/** 创建联邦训练任务 */
-export function createFederatedJob(payload: CreateJobPayload) {
-  const { modelType, ...body } = payload;
-  return request<any>({
-    url: '/federated/jobs',
-    method: 'post',
-    params: { modelType },
-    data: body
-  });
-}
-
-/** 启动任务 */
-export function startFederatedJob(jobId: string) {
-  return request<any>({
-    url: `/federated/jobs/${jobId}/start`,
+export function startFlTask(taskId: string) {
+  return request<FlTaskActionResult>({
+    url: `/api/fl-tasks/${taskId}/start`,
     method: 'post'
-  });
+  })
 }
 
-/** 停止任务 */
-export function stopFederatedJob(jobId: string) {
-  return request<any>({
-    url: `/federated/jobs/${jobId}/stop`,
+export function stopFlTask(taskId: string) {
+  return request<FlTaskActionResult>({
+    url: `/api/fl-tasks/${taskId}/stop`,
     method: 'post'
-  });
-}
-
-/** 删除任务 */
-export function deleteFederatedJob(jobId: string) {
-  return request<any>({
-    url: `/federated/jobs/${jobId}`,
-    method: 'delete'
-  });
+  })
 }

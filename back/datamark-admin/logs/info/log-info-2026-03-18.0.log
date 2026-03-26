@@ -1,0 +1,201 @@
+2026-03-18 16:00:44.063 [main] INFO  com.qczy.MyApplication - Starting MyApplication on DESKTOP-MVT8OQB with PID 5416 (D:\PROJECT\ELEC_1126\back\datamark-admin\target\classes started by Administrator in D:\PROJECT\ELEC_1126\back\datamark-admin)
+2026-03-18 16:00:44.066 [main] INFO  com.qczy.MyApplication - The following profiles are active: test
+2026-03-18 16:00:52.505 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfig' of type [com.qczy.config.AsyncConfig$$EnhancerBySpringCGLIB$$6a36d7c9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 16:00:52.955 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 16:00:53.424 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 16:00:53.436 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 16:00:53.442 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4fa9ab6' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 16:00:53.450 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 16:00:53.469 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 16:00:55.245 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2026-03-18 16:00:55.257 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-18 16:00:55.261 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-18 16:00:55.261 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2026-03-18 16:00:55.326 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-18 16:00:55.326 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 11171 ms
+2026-03-18 16:01:02.673 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-18 16:01:02.993 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-18 16:01:03.414 [main] INFO  c.q.federated.service.FederatedCoordinatorService - Loaded 2 nodes from database
+2026-03-18 16:01:03.543 [main] INFO  c.q.federated.service.FederatedCoordinatorService - Loaded 1 jobs from database
+2026-03-18 16:01:04.446 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2026-03-18 16:01:04.448 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'asyncExecutor'
+2026-03-18 16:01:04.459 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2026-03-18 16:01:04.462 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2026-03-18 16:01:04.840 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2026-03-18 16:01:04.996 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ad1b737, org.springframework.security.web.context.SecurityContextPersistenceFilter@271e851e, org.springframework.security.web.header.HeaderWriterFilter@5e541ef9, org.springframework.web.filter.CorsFilter@342a1f84, org.springframework.security.web.authentication.logout.LogoutFilter@1c90029b, com.qczy.filter.JwtAuthenticationTokenFilter@6393bf8b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7752c0e7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4cd7e993, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77d0dbba, org.springframework.security.web.session.SessionManagementFilter@550fa96f, org.springframework.security.web.access.ExceptionTranslationFilter@208f7165, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@36cfe107]
+2026-03-18 16:01:05.343 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2026-03-18 16:01:05.392 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2026-03-18 16:01:05.393 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Skipping initializing disabled plugin bean swagger v2.0
+2026-03-18 16:01:05.413 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-18 16:01:05.451 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:01:05.494 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2026-03-18 16:01:05.499 [main] INFO  com.qczy.MyApplication - Started MyApplication in 22.464 seconds (JVM running for 23.125)
+2026-03-18 16:01:10.477 [taskScheduler-4] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:01:15.493 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:01:20.511 [taskScheduler-2] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:01:23.922 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-18 16:01:23.922 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-18 16:01:23.937 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+2026-03-18 16:01:25.527 [taskScheduler-4] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:01:30.539 [taskScheduler-3] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:01:35.553 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:01:40.558 [taskScheduler-5] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:01:45.580 [taskScheduler-2] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:01:50.599 [taskScheduler-4] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:01:55.607 [taskScheduler-3] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:02:00.628 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:02:05.645 [taskScheduler-5] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:02:10.656 [taskScheduler-2] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:02:15.675 [taskScheduler-4] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:02:20.693 [taskScheduler-3] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:02:25.707 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:02:30.723 [taskScheduler-5] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:02:35.741 [taskScheduler-2] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:02:40.758 [taskScheduler-6] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:02:45.766 [taskScheduler-4] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:02:50.781 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:02:55.792 [taskScheduler-10] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:03:00.807 [taskScheduler-8] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:03:05.824 [taskScheduler-6] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:03:10.831 [taskScheduler-9] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:03:15.840 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:03:20.847 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:03:25.860 [taskScheduler-8] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:03:30.874 [taskScheduler-6] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:03:35.891 [taskScheduler-9] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:03:40.907 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:03:45.915 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:03:50.928 [taskScheduler-8] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:03:55.934 [taskScheduler-6] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:04:00.943 [taskScheduler-4] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:04:05.949 [taskScheduler-5] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:04:10.960 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:04:15.979 [taskScheduler-3] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:04:20.993 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:04:26.011 [taskScheduler-10] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:04:31.024 [taskScheduler-6] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:04:36.039 [taskScheduler-2] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:04:41.056 [taskScheduler-8] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:04:46.071 [taskScheduler-4] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:04:51.077 [taskScheduler-5] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:04:56.085 [taskScheduler-9] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:05:01.091 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:05:06.107 [taskScheduler-8] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:05:11.121 [taskScheduler-4] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:05:16.130 [taskScheduler-5] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:05:21.136 [taskScheduler-3] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:05:26.153 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:05:31.167 [taskScheduler-9] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:05:36.178 [taskScheduler-6] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:05:41.185 [taskScheduler-2] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:05:46.197 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:05:51.204 [taskScheduler-8] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:05:56.214 [taskScheduler-4] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:06:01.221 [taskScheduler-5] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:06:06.237 [taskScheduler-3] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:06:11.253 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:06:16.262 [taskScheduler-9] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:06:21.273 [taskScheduler-6] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:06:26.284 [taskScheduler-2] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:06:31.291 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:06:36.298 [taskScheduler-8] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:06:41.306 [taskScheduler-3] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:06:46.317 [taskScheduler-1] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:06:51.323 [taskScheduler-10] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 16:06:56.396 [taskScheduler-7] INFO  c.q.federated.service.FederatedCoordinatorService - Marked 2 nodes as inactive
+2026-03-18 20:25:33.391 [main] INFO  com.qczy.MyApplication - Starting MyApplication on DESKTOP-MVT8OQB with PID 7340 (D:\PROJECT\ELEC_1126\back\datamark-admin\target\classes started by Administrator in D:\PROJECT\ELEC_1126\back\datamark-admin)
+2026-03-18 20:25:33.394 [main] INFO  com.qczy.MyApplication - The following profiles are active: test
+2026-03-18 20:25:39.760 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfig' of type [com.qczy.config.AsyncConfig$$EnhancerBySpringCGLIB$$55bc7f77] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:25:40.013 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:25:40.497 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:25:40.503 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:25:40.508 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@58434b19' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:25:40.516 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:25:40.542 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:25:41.721 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2026-03-18 20:25:41.739 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-18 20:25:41.740 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-18 20:25:41.740 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2026-03-18 20:25:41.851 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-18 20:25:41.852 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 8372 ms
+2026-03-18 20:25:50.090 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2026-03-18 20:25:50.092 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'asyncExecutor'
+2026-03-18 20:25:50.105 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2026-03-18 20:25:50.108 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2026-03-18 20:25:50.924 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2026-03-18 20:25:51.052 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@72110818, org.springframework.security.web.context.SecurityContextPersistenceFilter@322b09da, org.springframework.security.web.header.HeaderWriterFilter@3b57f915, org.springframework.web.filter.CorsFilter@6eabe718, org.springframework.security.web.authentication.logout.LogoutFilter@4cfcac13, com.qczy.filter.JwtAuthenticationTokenFilter@ec7b5de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4efb13f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19dac2d6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38d525aa, org.springframework.security.web.session.SessionManagementFilter@56c42964, org.springframework.security.web.access.ExceptionTranslationFilter@3a3ad8e7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@793cef95]
+2026-03-18 20:25:51.713 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2026-03-18 20:25:51.779 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2026-03-18 20:25:51.783 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Skipping initializing disabled plugin bean swagger v2.0
+2026-03-18 20:25:51.803 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-18 20:25:51.818 [taskScheduler-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-18 20:25:51.882 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2026-03-18 20:25:51.891 [main] INFO  com.qczy.MyApplication - Started MyApplication in 19.416 seconds (JVM running for 20.019)
+2026-03-18 20:25:52.374 [taskScheduler-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-18 20:26:14.937 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-18 20:26:14.958 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-18 20:26:14.990 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2026-03-18 20:41:38.859 [main] INFO  com.qczy.MyApplication - Starting MyApplication on DESKTOP-MVT8OQB with PID 16824 (D:\PROJECT\ELEC_1126\back\datamark-admin\target\classes started by Administrator in D:\PROJECT\ELEC_1126\back\datamark-admin)
+2026-03-18 20:41:38.860 [main] INFO  com.qczy.MyApplication - The following profiles are active: test
+2026-03-18 20:41:42.257 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfig' of type [com.qczy.config.AsyncConfig$$EnhancerBySpringCGLIB$$ceada34f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:41:42.666 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:41:43.083 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:41:43.089 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:41:43.097 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@625dfff3' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:41:43.101 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:41:43.114 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 20:41:44.385 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2026-03-18 20:41:44.404 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-18 20:41:44.405 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-18 20:41:44.406 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2026-03-18 20:41:44.503 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-18 20:41:44.504 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 5515 ms
+2026-03-18 20:41:51.568 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2026-03-18 20:41:51.591 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'asyncExecutor'
+2026-03-18 20:41:51.616 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2026-03-18 20:41:51.646 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2026-03-18 20:41:52.579 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2026-03-18 20:41:52.770 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38d525aa, org.springframework.security.web.context.SecurityContextPersistenceFilter@308e87a1, org.springframework.security.web.header.HeaderWriterFilter@645dc557, org.springframework.web.filter.CorsFilter@f9b8129, org.springframework.security.web.authentication.logout.LogoutFilter@22c8ee48, com.qczy.filter.JwtAuthenticationTokenFilter@721d8ab5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5112b7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67eeb310, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7530090a, org.springframework.security.web.session.SessionManagementFilter@340c5fb6, org.springframework.security.web.access.ExceptionTranslationFilter@64b73e0a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67c21bf]
+2026-03-18 20:41:53.205 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2026-03-18 20:41:53.241 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2026-03-18 20:41:53.243 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Skipping initializing disabled plugin bean swagger v2.0
+2026-03-18 20:41:53.265 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-18 20:41:53.278 [taskScheduler-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-18 20:41:53.312 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2026-03-18 20:41:53.317 [main] INFO  com.qczy.MyApplication - Started MyApplication in 16.147 seconds (JVM running for 16.731)
+2026-03-18 20:41:53.532 [taskScheduler-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-18 20:42:33.098 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-18 20:42:33.099 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-18 20:42:33.118 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 19 ms
+2026-03-18 21:04:51.250 [main] INFO  com.qczy.MyApplication - Starting MyApplication on DESKTOP-MVT8OQB with PID 20756 (D:\PROJECT\ELEC_1126\back\datamark-admin\target\classes started by Administrator in D:\PROJECT\ELEC_1126\back\datamark-admin)
+2026-03-18 21:04:51.256 [main] INFO  com.qczy.MyApplication - The following profiles are active: test
+2026-03-18 21:04:55.238 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfig' of type [com.qczy.config.AsyncConfig$$EnhancerBySpringCGLIB$$c5f28af6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 21:04:55.453 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 21:04:55.784 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 21:04:55.792 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 21:04:55.797 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6d6bbd35' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 21:04:55.804 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 21:04:55.822 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-18 21:04:57.528 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2026-03-18 21:04:57.544 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-18 21:04:57.545 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-18 21:04:57.546 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2026-03-18 21:04:57.656 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-18 21:04:57.657 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 6226 ms
+2026-03-18 21:05:06.053 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2026-03-18 21:05:06.066 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'asyncExecutor'
+2026-03-18 21:05:06.078 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2026-03-18 21:05:06.081 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2026-03-18 21:05:06.647 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2026-03-18 21:05:06.815 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32b46831, org.springframework.security.web.context.SecurityContextPersistenceFilter@56835f2f, org.springframework.security.web.header.HeaderWriterFilter@45d389f2, org.springframework.web.filter.CorsFilter@5353dd09, org.springframework.security.web.authentication.logout.LogoutFilter@49190ed6, com.qczy.filter.JwtAuthenticationTokenFilter@60743cdb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76af51d6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4cfcac13, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@320ff86f, org.springframework.security.web.session.SessionManagementFilter@4efb13f1, org.springframework.security.web.access.ExceptionTranslationFilter@56c42964, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@77c23d90]
+2026-03-18 21:05:07.471 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2026-03-18 21:05:07.509 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2026-03-18 21:05:07.513 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Skipping initializing disabled plugin bean swagger v2.0
+2026-03-18 21:05:07.534 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-18 21:05:07.548 [taskScheduler-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-18 21:05:07.581 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2026-03-18 21:05:07.589 [main] INFO  com.qczy.MyApplication - Started MyApplication in 17.54 seconds (JVM running for 18.119)
+2026-03-18 21:05:07.806 [taskScheduler-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-18 21:07:48.275 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-18 21:07:48.275 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-18 21:07:48.299 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
